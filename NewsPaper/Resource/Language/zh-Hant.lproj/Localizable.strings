@@ -1,0 +1,45 @@
+/*
+ Localizable.strings
+ NewsPaper
+ 
+ Created by Jiahong Xu on 2017/6/26.
+ Copyright © 2017年 Jiahong Xu. All rights reserved.
+ */
+
+/**
+ *
+ * 记分板
+ *
+ **/
+
+"ScoreTabBarTitle" = "记分板";
+"ScoreMainTitle" = "记分板";
+
+/**
+ *
+ * 社区
+ *
+ **/
+
+"CommunityTabBarTitle" = "社区";
+"CommunityMainTitle" = "社区";
+
+
+/**
+ *
+ * 消息
+ *
+ **/
+
+"MessageTabBarTitle" = "消息";
+"MessageMainTitle" = "消息";
+
+
+/**
+ *
+ * 我的
+ *
+ **/
+
+"MeTabBarTitle" = "我的";
+"MeMainTitle" = "我的";
