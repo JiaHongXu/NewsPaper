@@ -1,6 +1,6 @@
 ![appicon](https://github.com/JiaHongXu/NewsPaper/blob/master/NewsPaper/Resource/Assets.xcassets/dailyIcon.imageset/dailyIcon@2x.png)
 # Daily
-A lightly new reading app
+A lightly news reading app
 
 ## Description
 Write for killing time, just for fun
