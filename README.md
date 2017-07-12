@@ -1,4 +1,4 @@
-![appicon](https://github.com/JiaHongXu/NewsPaper/blob/master/NewsPaper/Resource/Assets.xcassets/dailyIcon.imageset/dailyIcon@2x.png)
+![appicon](DailyLogo.png)
 # Daily
 
 A lightly news reading app
