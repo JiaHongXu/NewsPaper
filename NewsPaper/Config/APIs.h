@@ -10,8 +10,8 @@
 #define APIs_h
 
 // 服务器地址
-#define SERVER_URL @"http://iosnews.chinadaily.com.cn/"
+#define SERVER_URL @"http://iosnews.chinadaily.com.cn"
 
-#define NPApiNewsRecommand @"newsdata/news/recommend_v4.json"
+#define NPApiNewsRecommand @"/newsdata/news/recommend_v4.json"
 
 #endif /* APIs_h */

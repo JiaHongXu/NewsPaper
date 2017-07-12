@@ -28,9 +28,9 @@
 - (instancetype)initWithDic:(NSDictionary *)dic {
     if (self = [super init]) {
         JHJsonModelPropertyMappingNSInteger(dic, @"articleId", _articleId)
-        JHJsonModelPropertyMappingString(dic, @"description", _desc)
-        JHJsonModelPropertyMappingString(dic, @"file", _file)
-        JHJsonModelPropertyMappingString(dic, @"fileHD", _fileHD)
+        JHJsonModelPropertyMappingNSString(dic, @"description", _desc)
+        JHJsonModelPropertyMappingNSString(dic, @"file", _file)
+        JHJsonModelPropertyMappingNSString(dic, @"fileHD", _fileHD)
         JHJsonModelPropertyMappingNSInteger(dic, @"mediaId", _mediaId)
         JHJsonModelPropertyMappingNSInteger(dic, @"position", _position)
         JHJsonModelPropertyMappingNSInteger(dic, @"relatedPictureId", _relatedPictureId)

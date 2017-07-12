@@ -7,10 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+@class ArticleBean;
 
 @interface PictureBean : NSObject
 
-+ (NSArray<PictureBean *> *)picturesArrayFromDic:(NSDictionary *)dic;
++ (NSArray<PictureBean *> *)picturesArrayFromDic:(NSDictionary *)dic aritical:(ArticleBean *)article;
 
 @property (assign, nonatomic) NSInteger articleId;
 @property (strong, nonatomic) NSString *desc;
@@ -22,5 +23,5 @@
 @property (assign, nonatomic) NSInteger relatedLocationId;
 @property (assign, nonatomic) NSInteger width;
 
-- (instancetype)initWithDic:(NSDictionary *)dic;
+- (instancetype)initWithDic:(NSDictionary *)dic aritical:(ArticleBean *)article;
 @end

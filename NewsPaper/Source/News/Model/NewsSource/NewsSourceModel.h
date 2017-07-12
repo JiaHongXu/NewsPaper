@@ -9,6 +9,9 @@
 #import <Foundation/Foundation.h>
 #import "JHBaseModel.h"
 
+@class ArticleBean;
+@class RecommendBean;
+
 typedef NS_ENUM(NSInteger, NewsSourceType) {
     NewsSourceTypeRecommand = 0,
     NewsSourceTypeEditorsPick,
@@ -37,12 +40,12 @@ typedef NS_ENUM(NSInteger, NewsSourceType) {
 - (void)loadMore;
 
 - (NSInteger)count;
-- (NewsSourceModel *)sourceAtIndex:(NSInteger)index;
+- (ArticleBean *)sourceAtIndex:(NSInteger)index;
 
 @end
 
 @interface RecommandSourceModel : NewsSourceModel
 
-- (RecommandSourceModel *)sourceAtIndex:(NSInteger)index;
+- (RecommendBean *)sourceAtIndex:(NSInteger)index;
 
 @end

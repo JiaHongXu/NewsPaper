@@ -7,12 +7,13 @@
 //
 
 #import "NewsFragmentController.h"
-
 #import "NewsSourceModel.h"
-
+#import "RecommendBean.h"
+#import "ArticleBean.h"
 #import "UIViewController+JHExtension.h"
+#import "RecommendSliderCell.h"
 
-#define kTableViewCellIdentifier @"cellId"
+#define kTableViewCellIdentifier @[@"sliderCellId", @"test", @"test", @"test", @"test", @"test"]
 
 @interface NewsFragmentController () <UIScrollViewDelegate>
 @property (strong, nonatomic) NewsSourceModel *newsSource;
@@ -29,6 +30,7 @@
         WS(ws);
         [_newsSource setBlockWithReturnBlock:^(NSString *successMsg) {
             [ws.refreshControl endRefreshing];
+            [ws.tableView reloadData];
         } WithFailureBlock:^(NSString *failureMsg) {
             [ws.refreshControl endRefreshing];
         } WithErrorBlock:^(NSString *errorMsg) {
@@ -45,7 +47,7 @@
     
     self.refreshControl = [[UIRefreshControl alloc] init];
     self.refreshControl.tintColor = [JHThemeManager sharedThemeManager].accent;
-    self.refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:@"下拉刷新" attributes:@{NSForegroundColorAttributeName:[JHThemeManager sharedThemeManager].accent}];
+    self.refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:@"Pull to Refresh" attributes:@{NSForegroundColorAttributeName:[JHThemeManager sharedThemeManager].accent}];
     [self.refreshControl addTarget:self.newsSource action:@selector(refresh) forControlEvents:UIControlEventValueChanged];
     [self.refreshControl beginRefreshing];
 }
@@ -56,7 +58,8 @@
     [super viewDidLoad];
     [self configView];
     [self.newsSource refresh];
-    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:kTableViewCellIdentifier];
+    [self.tableView registerClass:[RecommendSliderCell class] forCellReuseIdentifier:kTableViewCellIdentifier[0]];
+    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:kTableViewCellIdentifier[1]];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -65,21 +68,57 @@
 
 #pragma mark - UITableViewDelegate
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.row == 0) {
+        return CGRectGetWidth(self.view.frame)*0.625;
+    } else {
+        return 100;
+    }
+}
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
 }
 
+#pragma mark - UITableViewDataSource
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 20;
+    return self.newsSource.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kTableViewCellIdentifier forIndexPath:indexPath];
-    if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:kTableViewCellIdentifier];
+    UITableViewCell *cell = nil;
+    if (self.newsSource.type == NewsSourceTypeRecommand) {
+        RecommendBean *recommend = [((RecommandSourceModel *)_newsSource) sourceAtIndex:indexPath.row];
+        [tableView dequeueReusableCellWithIdentifier:kTableViewCellIdentifier[recommend.type]];
+        if (!cell) {
+            switch (recommend.type) {
+                case RecommendTypeSlider:
+                    cell = [[RecommendSliderCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:kTableViewCellIdentifier[recommend.type]];
+                    break;
+                    
+                default:
+                    cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:kTableViewCellIdentifier[recommend.type]];
+                    break;
+            }
+        }
+        switch (recommend.type) {
+            case RecommendTypeSlider:
+                ((RecommendSliderCell *)cell).recommend = recommend;
+                break;
+                
+            default:
+                
+                break;
+        }
+    } else {
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kTableViewCellIdentifier[1] forIndexPath:indexPath];
+        if (!cell) {
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:kTableViewCellIdentifier[1]];
+        }
+        
+        cell.backgroundColor = [UIColor redColor];
     }
-    
-    cell.backgroundColor = [UIColor redColor];
     
     return cell;
 }

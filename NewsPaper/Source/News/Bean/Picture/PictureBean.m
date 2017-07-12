@@ -8,17 +8,23 @@
 
 #import "PictureBean.h"
 
+#import "ArticleBean.h"
+
+@interface PictureBean ()
+@property (weak, nonatomic) ArticleBean *article;
+@end
+
 @implementation PictureBean
 
 #pragma mark - Class Methods
 
-+ (NSArray<PictureBean *> *)picturesArrayFromDic:(NSDictionary *)dic {
++ (NSArray<PictureBean *> *)picturesArrayFromDic:(NSDictionary *)dic aritical:(ArticleBean *)article {
     if (!dic || [dic isKindOfClass:[NSNull class]]) {
         return @[];
     }
     NSMutableArray *array = [[NSMutableArray alloc] initWithCapacity:0];
     for (NSString *pitureId in dic.allKeys) {
-        [array addObject:[[PictureBean alloc] initWithDic:dic[pitureId]]];
+        [array addObject:[[PictureBean alloc] initWithDic:dic[pitureId] aritical:article]];
     }
 
     return [array copy];
@@ -26,12 +32,13 @@
 
 #pragma mark - Init Methods
 
-- (instancetype)initWithDic:(NSDictionary *)dic {
+- (instancetype)initWithDic:(NSDictionary *)dic aritical:(ArticleBean *)article {
     if (self = [super init]) {
+        _article = article;
         JHJsonModelPropertyMappingNSInteger(dic, @"articleId", _articleId)
-        JHJsonModelPropertyMappingString(dic, @"description", _desc)
-        JHJsonModelPropertyMappingString(dic, @"file", _file)
-        JHJsonModelPropertyMappingString(dic, @"fileHD", _fileHD)
+        JHJsonModelPropertyMappingNSString(dic, @"description", _desc)
+        JHJsonModelPropertyMappingNSString(dic, @"file", _file)
+        JHJsonModelPropertyMappingNSString(dic, @"fileHD", _fileHD)
         JHJsonModelPropertyMappingNSInteger(dic, @"height", _height)
         JHJsonModelPropertyMappingNSInteger(dic, @"pictureId", _pictureId)
         JHJsonModelPropertyMappingNSInteger(dic, @"position", _position)
@@ -40,6 +47,16 @@
     }
     
     return self;
+}
+
+#pragma mark - Getter
+
+- (NSString *)file {
+    return [NSString stringWithFormat:@"%@/newsdata/news/%@/%ld/%@", SERVER_URL, _article.path, _article.articleId, _file];
+}
+
+- (NSString *)fileHD {
+    return [NSString stringWithFormat:@"%@/newsdata/news/%@/%ld/%@", SERVER_URL, _article.path, _article.articleId, _fileHD];
 }
 
 @end

@@ -11,7 +11,7 @@
 #import "NewsNavigationController.h"
 #import "MenuViewController.h"
 
-@interface ZeusViewController ()
+@interface ZeusViewController () <UIGestureRecognizerDelegate>
 
 @property (strong, nonatomic) MenuViewController *menuVC;
 @property (strong, nonatomic) NewsNavigationController *newsNaviVC;
@@ -40,8 +40,8 @@
     [self addChildViewController:self.newsNaviVC];
     
     CGFloat menuWidth, menuHeight;
-    menuWidth = CGRectGetWidth(self.view.bounds)*0.7;
-    menuHeight = CGRectGetHeight(self.view.bounds);
+    menuWidth = CGRectGetWidth(self.view.frame)*0.8;
+    menuHeight = CGRectGetHeight(self.view.frame);
     
     [self.view addSubview:_menuVC.view];
     _menuVC.view.frame = CGRectMake(-menuWidth, 0, menuWidth, menuHeight);
@@ -101,8 +101,8 @@
     [_mainView addGestureRecognizer:self.tapGesture];
     [_mainView setUserInteractionEnabled:NO];
     [UIView animateWithDuration:0.3 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
-        self.mainView.center = CGPointMake(self.mainView.center.x+CGRectGetWidth(self.menuVC.view.frame), self.mainView.center.y);
-        self.menuVC.view.center =CGPointMake(self.menuVC.view.center.x+CGRectGetWidth(self.menuVC.view.frame), self.menuVC.view.center.y);
+        self.mainView.center = CGPointMake(CGRectGetWidth(self.mainView.frame)/2+CGRectGetWidth(self.menuVC.view.frame), self.mainView.center.y);
+        self.menuVC.view.center =CGPointMake(CGRectGetWidth(self.menuVC.view.frame)/2, self.menuVC.view.center.y);
     } completion:^(BOOL finished) {
         [_mainView setUserInteractionEnabled:YES];
     }];
@@ -112,11 +112,12 @@
     _isMenuOpen = NO;
     [_mainView removeGestureRecognizer:self.tapGesture];
     _tapGesture = nil;
+    [_mainView setUserInteractionEnabled:NO];
     [UIView animateWithDuration:0.3 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
-        self.mainView.center = CGPointMake(self.mainView.center.x-CGRectGetWidth(self.menuVC.view.frame), self.mainView.center.y);
-        self.menuVC.view.center =CGPointMake(self.menuVC.view.center.x-CGRectGetWidth(self.menuVC.view.frame), self.menuVC.view.center.y);
+        self.mainView.center = CGPointMake(CGRectGetWidth(self.mainView.frame)/2, self.mainView.center.y);
+        self.menuVC.view.center =CGPointMake(-CGRectGetWidth(self.menuVC.view.frame)/2, self.menuVC.view.center.y);
     } completion:^(BOOL finished) {
-        
+        [_mainView setUserInteractionEnabled:YES];
     }];
 }
 
@@ -168,4 +169,5 @@
     
     return _tapGesture;
 }
+
 @end

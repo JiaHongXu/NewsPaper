@@ -17,7 +17,7 @@
 @property (strong, nonatomic) NSString *title;
 @property (strong, nonatomic) NSString *api;
 
-@property (strong, nonatomic) NSMutableArray *articleArray;
+@property (strong, nonatomic) NSMutableArray<ArticleBean *> *articleArray;
 
 @end
 
@@ -70,7 +70,7 @@
     return self.articleArray.count;
 }
 
-- (NewsSourceModel *)sourceAtIndex:(NSInteger)index {
+- (ArticleBean *)sourceAtIndex:(NSInteger)index {
     if (index < self.articleArray.count) {
         return self.articleArray[index];
     }
@@ -105,15 +105,15 @@
 - (NSString *)api {
     if (!_api) {
         _api = @{@"Recommand":NPApiNewsRecommand,
-                 @"Editor's Pick":@"newsdata/news/columns/440_column_v4.json",
-                 @"Audio":@"newsdata/news/columns/audios.json",
+                 @"Editor's Pick":@"/newsdata/news/columns/440_column_v4.json",
+                 @"Audio":@"/newsdata/news/columns/audios.json",
                  }[self.title];
     }
     
     return _api;
 }
 
-- (NSMutableArray *)articleArray {
+- (NSMutableArray<ArticleBean *> *)articleArray {
     if (!_articleArray) {
         _articleArray = [[NSMutableArray alloc] initWithCapacity:0];
     }
@@ -152,7 +152,7 @@
     return self.recommendArray.count;
 }
 
-- (RecommandSourceModel *)sourceAtIndex:(NSInteger)index {
+- (RecommendBean *)sourceAtIndex:(NSInteger)index {
     if (index < self.recommendArray.count) {
         return self.recommendArray[index];
     }
@@ -163,7 +163,7 @@
 
 #pragma mark - Getter
 
-- (NSMutableArray *)recommendArray {
+- (NSMutableArray<RecommendBean *> *)recommendArray {
     if (!_recommendArray) {
         _recommendArray = [[NSMutableArray alloc] initWithCapacity:0];
     }
@@ -171,7 +171,7 @@
     return _recommendArray;
 }
 
-- (NSMutableArray *)articleArray {
+- (NSMutableArray<ArticleBean *> *)articleArray {
     return nil;
 }
 

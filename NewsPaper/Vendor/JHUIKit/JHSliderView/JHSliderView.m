@@ -110,6 +110,7 @@
     self.imgView.frame = CGRectMake(0, 0, width, height);
     self.bottomView.frame = CGRectMake(0, 0.8*height, width, 0.2*height);
     self.titleLabel.center = self.bottomView.center;
+    self.titleLabel.frame =  CGRectMake(0, 0, 0.8*width, 0.2*height);
     self.titleLabel.preferredMaxLayoutWidth = width*0.8;
 }
 
@@ -118,6 +119,8 @@
 - (UIImageView *)imgView {
     if (!_imgView) {
         _imgView = [[UIImageView alloc] init];
+        [_imgView setContentMode:UIViewContentModeScaleAspectFill];
+        [_imgView setClipsToBounds:YES];
         [self addSubview:_imgView];
     }
     
@@ -127,6 +130,7 @@
 - (UIView *)bottomView {
     if (!_bottomView) {
         _bottomView = [[UIView alloc] init];
+        _bottomView.backgroundColor = [UIColor colorWithWhite:0 alpha:0.5];
         [self addSubview:_bottomView];
     }
     return _bottomView;
@@ -193,7 +197,7 @@
 #pragma mark - Init Methods
 
 - (instancetype)initWithPlaceholderImage:(UIImage *)placeholder {
-    if (self = [self initWithPlaceholderImage:placeholder]) {
+    if (self = [self initWithFrame:CGRectZero placeholder:placeholder]) {
         
     }
     
@@ -218,14 +222,6 @@
     return self;
 }
 
-- (instancetype)initWithFrame:(CGRect)frame {
-    if (self = [self initWithFrame:frame placeholder:nil]) {
-        
-    }
-    
-    return self;
-}
-
 - (void)config {
     _infinite = NO;
     _autoPlay = YES;
@@ -241,8 +237,10 @@
     NSInteger resourcesCount = _isWebImgs ? _sliderBeans.count : _sliderBeans.count;
     if (page<resourcesCount-1) {
         [self.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForRow:page+1 inSection:0] atScrollPosition:UICollectionViewScrollPositionLeft animated:YES];
+        self.pageControl.currentPage = page+1;
     } else {
         [self.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UICollectionViewScrollPositionLeft animated:YES];
+        self.pageControl.currentPage = 0;
     }
 }
 
@@ -277,6 +275,7 @@
 #pragma mark - UICollectionViewDataSource
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    self.pageControl.numberOfPages = _sliderBeans.count;
     return _sliderBeans.count;
 }
 
@@ -287,11 +286,8 @@
         sliderCell = [[JHSliderViewCell alloc] init];
     }
     
-    sliderCell.backgroundColor = @[[UIColor redColor],
-                                   [UIColor blueColor],
-                                   [UIColor yellowColor],
-                                   [UIColor greenColor],
-                                   [UIColor grayColor]][indexPath.row];
+    sliderCell.placeholder = _placeholder;
+    sliderCell.sliderBean = _sliderBeans[indexPath.row];
     
     return sliderCell;
 }
@@ -334,7 +330,6 @@
         _pageControl = [[UIPageControl alloc] init];
         _pageControl.pageIndicatorTintColor = [UIColor colorWithWhite:1.0 alpha:0.5];
         _pageControl.currentPageIndicatorTintColor = [UIColor colorWithWhite:1.0 alpha:1];
-        _pageControl.numberOfPages = 5;
         _pageControl.currentPage = 0;
         [_pageControl addTarget:self action:@selector(onPageControlValueChange:) forControlEvents:UIControlEventValueChanged];
         

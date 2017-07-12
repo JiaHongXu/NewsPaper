@@ -145,7 +145,7 @@
 
 - (UIBarButtonItem *)leftMenuBarButton {
     if (!_leftMenuBarButton) {
-        _leftMenuBarButton = [[UIBarButtonItem alloc] initWithTitle:@"菜单" style:UIBarButtonItemStylePlain target:self action:@selector(onLeftMenuButtonClicked)];
+        _leftMenuBarButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"category"] style:UIBarButtonItemStylePlain target:self action:@selector(onLeftMenuButtonClicked)];
     }
     
     return _leftMenuBarButton;

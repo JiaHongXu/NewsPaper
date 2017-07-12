@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-#define JHJsonModelPropertyMappingString(dic,key,var)\
+#define JHJsonModelPropertyMappingNSString(dic,key,var)\
 {\
     id object = [dic objectForKey:key];\
     if (!object||[object isKindOfClass:[NSNull class]])\

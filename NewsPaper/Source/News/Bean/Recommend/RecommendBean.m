@@ -61,7 +61,7 @@
         JHJsonModelPropertyMappingNSInteger(dic, @"recommendId", _recommendId)
         JHJsonModelPropertyMappingNSInteger(dic, @"isSpecial", _isSpecial)
         JHJsonModelPropertyMappingNSInteger(dic, @"recommendTemplate", _type)
-        JHJsonModelPropertyMappingString(dic, @"title", _title)
+        JHJsonModelPropertyMappingNSString(dic, @"title", _title)
         JHJsonModelPropertyMappingNSInteger(dic, @"position", _position)
         JHJsonModelPropertyMappingNSInteger(dic, @"createTime", _createTime)
         _article = [[ArticleBean alloc] initWithDic:dic[@"article"]];

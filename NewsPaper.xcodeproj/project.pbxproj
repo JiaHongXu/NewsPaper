@@ -13,6 +13,7 @@
 		5C4085471F0FBD6A00614E7F /* NewsFragmentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C4085461F0FBD6A00614E7F /* NewsFragmentController.m */; };
 		5C855D1C1F150565002F85AA /* JHSliderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C855D1B1F150565002F85AA /* JHSliderView.m */; };
 		5C855D211F15104D002F85AA /* RecommendBean.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C855D201F15104D002F85AA /* RecommendBean.m */; };
+		5C855D261F1621FE002F85AA /* RecommendSliderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C855D251F1621FE002F85AA /* RecommendSliderCell.m */; };
 		5C98B3381F1105750059F7BD /* JHNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C98B3311F1105750059F7BD /* JHNetworkManager.m */; };
 		5C98B3391F1105750059F7BD /* JHThemeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C98B3341F1105750059F7BD /* JHThemeManager.m */; };
 		5C98B33A1F1105750059F7BD /* JHBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C98B3371F1105750059F7BD /* JHBaseModel.m */; };
@@ -71,6 +72,8 @@
 		5C855D1B1F150565002F85AA /* JHSliderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHSliderView.m; sourceTree = "<group>"; };
 		5C855D1F1F15104D002F85AA /* RecommendBean.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecommendBean.h; sourceTree = "<group>"; };
 		5C855D201F15104D002F85AA /* RecommendBean.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecommendBean.m; sourceTree = "<group>"; };
+		5C855D241F1621FE002F85AA /* RecommendSliderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecommendSliderCell.h; sourceTree = "<group>"; };
+		5C855D251F1621FE002F85AA /* RecommendSliderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecommendSliderCell.m; sourceTree = "<group>"; };
 		5C98B3301F1105750059F7BD /* JHNetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHNetworkManager.h; sourceTree = "<group>"; };
 		5C98B3311F1105750059F7BD /* JHNetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHNetworkManager.m; sourceTree = "<group>"; };
 		5C98B3331F1105750059F7BD /* JHThemeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHThemeManager.h; sourceTree = "<group>"; };
@@ -222,6 +225,7 @@
 		5C855D1D1F1505D0002F85AA /* View */ = {
 			isa = PBXGroup;
 			children = (
+				5C855D221F1621B5002F85AA /* Cell */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -233,6 +237,23 @@
 				5C855D201F15104D002F85AA /* RecommendBean.m */,
 			);
 			path = Recommend;
+			sourceTree = "<group>";
+		};
+		5C855D221F1621B5002F85AA /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				5C855D231F1621D8002F85AA /* RecommendSliderCell */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		5C855D231F1621D8002F85AA /* RecommendSliderCell */ = {
+			isa = PBXGroup;
+			children = (
+				5C855D241F1621FE002F85AA /* RecommendSliderCell.h */,
+				5C855D251F1621FE002F85AA /* RecommendSliderCell.m */,
+			);
+			path = RecommendSliderCell;
 			sourceTree = "<group>";
 		};
 		5C98B32F1F1105750059F7BD /* JHNetworkManager */ = {
@@ -812,6 +833,7 @@
 				5CB389A31F0F251100E219BB /* MenuViewController.m in Sources */,
 				5CDA601F1F0E67F700A16F79 /* MeMainViewController.m in Sources */,
 				5CDA602A1F0E67F700A16F79 /* JHViewController.m in Sources */,
+				5C855D261F1621FE002F85AA /* RecommendSliderCell.m in Sources */,
 				5C98B3431F1108AF0059F7BD /* UIViewController+JHExtension.m in Sources */,
 				5C294CD11F114F0100B03721 /* PictureBean.m in Sources */,
 				5C98B3391F1105750059F7BD /* JHThemeManager.m in Sources */,

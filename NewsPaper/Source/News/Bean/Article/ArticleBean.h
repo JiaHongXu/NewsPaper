@@ -10,6 +10,12 @@
 @class PictureBean;
 @class MediaBean;
 
+typedef NS_ENUM(NSInteger, ArticleContentMode) {
+    ArticleContentModeLargePicture = 1,
+    ArticleContentModeNNNNN,
+    ArticleContentModeTitlePicture = 6,
+};
+
 @interface ArticleBean : NSObject
 
 @property (assign, nonatomic) NSInteger articleId;
@@ -19,7 +25,7 @@
 @property (assign, nonatomic) NSInteger columnId;
 @property (strong, nonatomic) NSString *content;
 @property (strong, nonatomic) NSString *contentB;
-@property (assign, nonatomic) NSInteger contentMode;
+@property (assign, nonatomic) ArticleContentMode contentMode;
 @property (strong, nonatomic) NSString *desc;
 @property (strong, nonatomic) NSString *descB;
 @property (strong, nonatomic) NSString *feature;
