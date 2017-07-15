@@ -7,15 +7,16 @@ A lightly news reading app
 
 Write for killing time, just for fun
 
-## Expect feature
+## Expected feature
 
-Smooth like ??? Dove ???
-
-Amazing UI and interaction design, as I could
-
-Handy ways to translate english sentence to chinese
-
-Useful for english-learner, especially the enjoy news-reading ones
+1. Smooth like ??? Dove ???
+2. Amazing UI and interaction design, as I could
+3. Handy ways to translate english sentence to chinese
+4. Useful for english-learner, especially the enjoy news-reading ones
+5. A new way to deal with complex tableview cell reuse
+6. Theme switch
+7. Maybe to translate html websites to reader mode
+8. Optimization in poor network situation
 
 ## Where the News come from?
 
