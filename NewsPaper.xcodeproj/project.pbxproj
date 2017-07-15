@@ -13,12 +13,13 @@
 		5C4085471F0FBD6A00614E7F /* NewsFragmentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C4085461F0FBD6A00614E7F /* NewsFragmentController.m */; };
 		5C855D1C1F150565002F85AA /* JHSliderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C855D1B1F150565002F85AA /* JHSliderView.m */; };
 		5C855D211F15104D002F85AA /* RecommendBean.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C855D201F15104D002F85AA /* RecommendBean.m */; };
-		5C855D261F1621FE002F85AA /* RecommendSliderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C855D251F1621FE002F85AA /* RecommendSliderCell.m */; };
 		5C98B3381F1105750059F7BD /* JHNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C98B3311F1105750059F7BD /* JHNetworkManager.m */; };
 		5C98B3391F1105750059F7BD /* JHThemeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C98B3341F1105750059F7BD /* JHThemeManager.m */; };
 		5C98B33A1F1105750059F7BD /* JHBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C98B3371F1105750059F7BD /* JHBaseModel.m */; };
 		5C98B33E1F11064A0059F7BD /* NSDictionary+JHExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C98B33D1F11064A0059F7BD /* NSDictionary+JHExtension.m */; };
 		5C98B3431F1108AF0059F7BD /* UIViewController+JHExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C98B3421F1108AF0059F7BD /* UIViewController+JHExtension.m */; };
+		5CA9CF191F18EB94006CB2E2 /* NPCellFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CA9CF181F18EB94006CB2E2 /* NPCellFactory.m */; };
+		5CA9CF221F1A20CD006CB2E2 /* RecommendHeaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CA9CF211F1A20CD006CB2E2 /* RecommendHeaderCell.m */; };
 		5CA9E7F71F0E9D5000F28645 /* ZeusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CA9E7F61F0E9D5000F28645 /* ZeusViewController.m */; };
 		5CA9E7FD1F0EA10400F28645 /* NewsPagerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CA9E7FC1F0EA10400F28645 /* NewsPagerViewController.m */; };
 		5CB389A31F0F251100E219BB /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CB389A21F0F251100E219BB /* MenuViewController.m */; };
@@ -72,8 +73,6 @@
 		5C855D1B1F150565002F85AA /* JHSliderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHSliderView.m; sourceTree = "<group>"; };
 		5C855D1F1F15104D002F85AA /* RecommendBean.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecommendBean.h; sourceTree = "<group>"; };
 		5C855D201F15104D002F85AA /* RecommendBean.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecommendBean.m; sourceTree = "<group>"; };
-		5C855D241F1621FE002F85AA /* RecommendSliderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecommendSliderCell.h; sourceTree = "<group>"; };
-		5C855D251F1621FE002F85AA /* RecommendSliderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecommendSliderCell.m; sourceTree = "<group>"; };
 		5C98B3301F1105750059F7BD /* JHNetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHNetworkManager.h; sourceTree = "<group>"; };
 		5C98B3311F1105750059F7BD /* JHNetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHNetworkManager.m; sourceTree = "<group>"; };
 		5C98B3331F1105750059F7BD /* JHThemeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHThemeManager.h; sourceTree = "<group>"; };
@@ -84,6 +83,10 @@
 		5C98B33D1F11064A0059F7BD /* NSDictionary+JHExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+JHExtension.m"; sourceTree = "<group>"; };
 		5C98B3411F1108AF0059F7BD /* UIViewController+JHExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+JHExtension.h"; sourceTree = "<group>"; };
 		5C98B3421F1108AF0059F7BD /* UIViewController+JHExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+JHExtension.m"; sourceTree = "<group>"; };
+		5CA9CF171F18EB94006CB2E2 /* NPCellFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPCellFactory.h; sourceTree = "<group>"; };
+		5CA9CF181F18EB94006CB2E2 /* NPCellFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPCellFactory.m; sourceTree = "<group>"; };
+		5CA9CF201F1A20CD006CB2E2 /* RecommendHeaderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecommendHeaderCell.h; sourceTree = "<group>"; };
+		5CA9CF211F1A20CD006CB2E2 /* RecommendHeaderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecommendHeaderCell.m; sourceTree = "<group>"; };
 		5CA9E7F51F0E9D5000F28645 /* ZeusViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZeusViewController.h; sourceTree = "<group>"; };
 		5CA9E7F61F0E9D5000F28645 /* ZeusViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZeusViewController.m; sourceTree = "<group>"; };
 		5CA9E7FB1F0EA10400F28645 /* NewsPagerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsPagerViewController.h; sourceTree = "<group>"; };
@@ -225,6 +228,7 @@
 		5C855D1D1F1505D0002F85AA /* View */ = {
 			isa = PBXGroup;
 			children = (
+				5CA9CF161F18EB73006CB2E2 /* CellFactory */,
 				5C855D221F1621B5002F85AA /* Cell */,
 			);
 			path = View;
@@ -242,18 +246,10 @@
 		5C855D221F1621B5002F85AA /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				5C855D231F1621D8002F85AA /* RecommendSliderCell */,
+				5CA9CF1A1F1A20CD006CB2E2 /* BodyCell */,
+				5CA9CF1D1F1A20CD006CB2E2 /* HeaderCell */,
 			);
 			path = Cell;
-			sourceTree = "<group>";
-		};
-		5C855D231F1621D8002F85AA /* RecommendSliderCell */ = {
-			isa = PBXGroup;
-			children = (
-				5C855D241F1621FE002F85AA /* RecommendSliderCell.h */,
-				5C855D251F1621FE002F85AA /* RecommendSliderCell.m */,
-			);
-			path = RecommendSliderCell;
 			sourceTree = "<group>";
 		};
 		5C98B32F1F1105750059F7BD /* JHNetworkManager */ = {
@@ -306,6 +302,63 @@
 				5C98B3421F1108AF0059F7BD /* UIViewController+JHExtension.m */,
 			);
 			path = "UIViewController+JHExtension";
+			sourceTree = "<group>";
+		};
+		5CA9CF161F18EB73006CB2E2 /* CellFactory */ = {
+			isa = PBXGroup;
+			children = (
+				5CA9CF171F18EB94006CB2E2 /* NPCellFactory.h */,
+				5CA9CF181F18EB94006CB2E2 /* NPCellFactory.m */,
+			);
+			path = CellFactory;
+			sourceTree = "<group>";
+		};
+		5CA9CF1A1F1A20CD006CB2E2 /* BodyCell */ = {
+			isa = PBXGroup;
+			children = (
+				5CA9CF1B1F1A20CD006CB2E2 /* NormalBodyCell */,
+				5CA9CF1C1F1A20CD006CB2E2 /* RecommendBodyCell */,
+			);
+			path = BodyCell;
+			sourceTree = "<group>";
+		};
+		5CA9CF1B1F1A20CD006CB2E2 /* NormalBodyCell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = NormalBodyCell;
+			sourceTree = "<group>";
+		};
+		5CA9CF1C1F1A20CD006CB2E2 /* RecommendBodyCell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = RecommendBodyCell;
+			sourceTree = "<group>";
+		};
+		5CA9CF1D1F1A20CD006CB2E2 /* HeaderCell */ = {
+			isa = PBXGroup;
+			children = (
+				5CA9CF1E1F1A20CD006CB2E2 /* NormalHeaderCell */,
+				5CA9CF1F1F1A20CD006CB2E2 /* RecommendHeaderCell */,
+			);
+			path = HeaderCell;
+			sourceTree = "<group>";
+		};
+		5CA9CF1E1F1A20CD006CB2E2 /* NormalHeaderCell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = NormalHeaderCell;
+			sourceTree = "<group>";
+		};
+		5CA9CF1F1F1A20CD006CB2E2 /* RecommendHeaderCell */ = {
+			isa = PBXGroup;
+			children = (
+				5CA9CF201F1A20CD006CB2E2 /* RecommendHeaderCell.h */,
+				5CA9CF211F1A20CD006CB2E2 /* RecommendHeaderCell.m */,
+			);
+			path = RecommendHeaderCell;
 			sourceTree = "<group>";
 		};
 		5CA9E7F21F0E9C8C00F28645 /* Root */ = {
@@ -823,6 +876,7 @@
 				5C4085471F0FBD6A00614E7F /* NewsFragmentController.m in Sources */,
 				5C98B33A1F1105750059F7BD /* JHBaseModel.m in Sources */,
 				5C294CDD1F12069300B03721 /* ArticleBean.m in Sources */,
+				5CA9CF191F18EB94006CB2E2 /* NPCellFactory.m in Sources */,
 				5CDA601B1F0E67F700A16F79 /* AppDelegate.m in Sources */,
 				5CA9E7FD1F0EA10400F28645 /* NewsPagerViewController.m in Sources */,
 				5CDA60231F0E67F700A16F79 /* MeNavigationController.m in Sources */,
@@ -830,10 +884,10 @@
 				5CDA60291F0E67F700A16F79 /* JHNavigationController.m in Sources */,
 				5CB389A71F0F395F00E219BB /* NewsNavigationController.m in Sources */,
 				5C98B3381F1105750059F7BD /* JHNetworkManager.m in Sources */,
+				5CA9CF221F1A20CD006CB2E2 /* RecommendHeaderCell.m in Sources */,
 				5CB389A31F0F251100E219BB /* MenuViewController.m in Sources */,
 				5CDA601F1F0E67F700A16F79 /* MeMainViewController.m in Sources */,
 				5CDA602A1F0E67F700A16F79 /* JHViewController.m in Sources */,
-				5C855D261F1621FE002F85AA /* RecommendSliderCell.m in Sources */,
 				5C98B3431F1108AF0059F7BD /* UIViewController+JHExtension.m in Sources */,
 				5C294CD11F114F0100B03721 /* PictureBean.m in Sources */,
 				5C98B3391F1105750059F7BD /* JHThemeManager.m in Sources */,

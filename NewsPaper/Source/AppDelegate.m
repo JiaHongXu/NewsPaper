@@ -10,6 +10,10 @@
 
 #import "ZeusViewController.h"
 
+// register cells
+#import "NPCellFactory.h"
+#import "RecommendHeaderCell.h"
+
 @interface AppDelegate ()
 @property (strong, nonatomic) ZeusViewController *zeusVC;
 @end
@@ -24,6 +28,24 @@
 }
 
 - (void)initData{
+    [self initNetwork];
+    [self initCells];
+}
+
+- (void)initView {
+    // 初始化视图
+    self.window = [[UIWindow alloc]initWithFrame:[[UIScreen mainScreen]bounds]];
+    self.window.rootViewController = self.zeusVC;
+    self.window.backgroundColor = [UIColor whiteColor];
+    [self.window makeKeyAndVisible];
+    [self startupAnimation];
+}
+
+- (void)initCells {
+    [NPCellFactory registerCellClass:[RecommendHeaderCell class] forType:NPCellTypeRecommendHeader];
+}
+
+- (void)initNetwork {
     // 开始监测网络状态
     [[AFNetworkReachabilityManager sharedManager] startMonitoring];
     [[AFNetworkReachabilityManager sharedManager] setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
@@ -46,15 +68,6 @@
                 break;
         }
     }];
-}
-
-- (void)initView{
-    // 初始化视图
-    self.window = [[UIWindow alloc]initWithFrame:[[UIScreen mainScreen]bounds]];
-    self.window.rootViewController = self.zeusVC;
-    self.window.backgroundColor = [UIColor whiteColor];
-    [self.window makeKeyAndVisible];
-    [self startupAnimation];
 }
 
 #pragma mark - Private Methods

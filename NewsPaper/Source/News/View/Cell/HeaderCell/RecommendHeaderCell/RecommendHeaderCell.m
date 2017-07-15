@@ -1,23 +1,23 @@
 //
-//  RecommendSliderCell.m
+//  RecommendHeaderCell.m
 //  NewsPaper
 //
 //  Created by Jiahong Xu on 2017/7/12.
 //  Copyright © 2017年 Jiahong Xu. All rights reserved.
 //
 
-#import "RecommendSliderCell.h"
+#import "RecommendHeaderCell.h"
 
 #import "JHSliderView.h"
 #import "RecommendBean.h"
 #import "ArticleBean.h"
 #import "PictureBean.h"
 
-@interface RecommendSliderCell ()
+@interface RecommendHeaderCell ()
 @property (strong, nonatomic) JHSliderView *sliderView;
 @end
 
-@implementation RecommendSliderCell
+@implementation RecommendHeaderCell
 
 #pragma mark - Init Methods
 
@@ -56,7 +56,7 @@
     RecommendBean *currentRecommend = _recommend;
     while (currentRecommend) {
         [titles addObject:currentRecommend.title];
-        [imgUrls addObject:currentRecommend.article.pictures[0].file];
+        [imgUrls addObject:currentRecommend.article.pictures[0].fileHD];
         currentRecommend = currentRecommend.nextRecommend;
     }
     [self.sliderView setTitles:titles imgUrls:imgUrls];

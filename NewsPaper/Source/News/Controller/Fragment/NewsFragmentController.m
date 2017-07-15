@@ -11,7 +11,7 @@
 #import "RecommendBean.h"
 #import "ArticleBean.h"
 #import "UIViewController+JHExtension.h"
-#import "RecommendSliderCell.h"
+#import "RecommendHeaderCell.h"
 
 #define kTableViewCellIdentifier @[@"sliderCellId", @"test", @"test", @"test", @"test", @"test"]
 
@@ -58,7 +58,7 @@
     [super viewDidLoad];
     [self configView];
     [self.newsSource refresh];
-    [self.tableView registerClass:[RecommendSliderCell class] forCellReuseIdentifier:kTableViewCellIdentifier[0]];
+    [self.tableView registerClass:[RecommendHeaderCell class] forCellReuseIdentifier:kTableViewCellIdentifier[0]];
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:kTableViewCellIdentifier[1]];
 }
 
@@ -70,7 +70,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.row == 0) {
-        return CGRectGetWidth(self.view.frame)*0.625;
+        return CGRectGetWidth(self.view.frame)*10./16.;
     } else {
         return 100;
     }
@@ -94,7 +94,7 @@
         if (!cell) {
             switch (recommend.type) {
                 case RecommendTypeSlider:
-                    cell = [[RecommendSliderCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:kTableViewCellIdentifier[recommend.type]];
+                    cell = [[RecommendHeaderCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:kTableViewCellIdentifier[recommend.type]];
                     break;
                     
                 default:
@@ -104,7 +104,7 @@
         }
         switch (recommend.type) {
             case RecommendTypeSlider:
-                ((RecommendSliderCell *)cell).recommend = recommend;
+                ((RecommendHeaderCell *)cell).recommend = recommend;
                 break;
                 
             default:

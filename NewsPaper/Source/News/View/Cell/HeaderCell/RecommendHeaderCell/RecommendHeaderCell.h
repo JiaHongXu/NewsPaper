@@ -1,5 +1,5 @@
 //
-//  RecommendSliderCell.h
+//  RecommendHeaderCell.h
 //  NewsPaper
 //
 //  Created by Jiahong Xu on 2017/7/12.
@@ -10,6 +10,6 @@
 
 @class RecommendBean;
 
-@interface RecommendSliderCell : UITableViewCell
+@interface RecommendHeaderCell : UITableViewCell
 @property (strong, nonatomic) RecommendBean *recommend;
 @end

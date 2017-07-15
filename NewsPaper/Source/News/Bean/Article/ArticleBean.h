@@ -11,7 +11,8 @@
 @class MediaBean;
 
 typedef NS_ENUM(NSInteger, ArticleContentMode) {
-    ArticleContentModeLargePicture = 1,
+    ArticleContentModeDefault = 0,      // title only or pic with title or large pic
+    ArticleContentModeLargePicture = 1, // able to be large pic or pic with title
     ArticleContentModeNNNNN,
     ArticleContentModeTitlePicture = 6,
 };

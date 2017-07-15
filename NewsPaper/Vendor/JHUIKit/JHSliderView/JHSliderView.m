@@ -108,9 +108,8 @@
     [super layoutSubviews];
     CGFloat height = CGRectGetHeight(self.frame), width = CGRectGetWidth(self.frame);
     self.imgView.frame = CGRectMake(0, 0, width, height);
-    self.bottomView.frame = CGRectMake(0, 0.8*height, width, 0.2*height);
-    self.titleLabel.center = self.bottomView.center;
-    self.titleLabel.frame =  CGRectMake(0, 0, 0.8*width, 0.2*height);
+    self.bottomView.frame = CGRectMake(0, 0.7*height, width, 0.3*height);
+    self.titleLabel.frame =  self.bottomView.bounds;
     self.titleLabel.preferredMaxLayoutWidth = width*0.8;
 }
 
@@ -131,7 +130,7 @@
     if (!_bottomView) {
         _bottomView = [[UIView alloc] init];
         _bottomView.backgroundColor = [UIColor colorWithWhite:0 alpha:0.5];
-        [self addSubview:_bottomView];
+        [self insertSubview:_bottomView aboveSubview:self.imgView];
     }
     return _bottomView;
 }
@@ -142,6 +141,7 @@
         _titleLabel.numberOfLines = 0;
         _titleLabel.textColor = [UIColor whiteColor];
         _titleLabel.textAlignment = NSTextAlignmentCenter;
+        _titleLabel.font = [UIFont preferredFontForTextStyle:UIFontTextStyleHeadline];
         
         [self.bottomView addSubview:_titleLabel];
     }
@@ -256,7 +256,7 @@
 - (void)layoutSubviews {
     ((UICollectionViewFlowLayout *)self.collectionView.collectionViewLayout).itemSize = self.frame.size;
     CGFloat width = CGRectGetWidth(self.frame), height = CGRectGetHeight(self.frame);
-    self.pageControl.frame = CGRectMake(0, height-20-10, width, 20);
+    self.pageControl.frame = CGRectMake(0, height-15, width, 15);
     self.collectionView.frame = CGRectMake(0, 0, width, height);
 }
 
