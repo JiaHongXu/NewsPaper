@@ -14,8 +14,8 @@
 
 typedef NS_ENUM(NSInteger, RecommendType) {
     RecommendTypeSlider = 0,
-    RecommendTypeSingleSmallPicture = 1,
-    RecommendTypeSingleLargePicture = 2,
+    RecommendTypeDetail = 1,
+    RecommendTypeLargePicture = 2,
     RecommendTypeMultiPicture = 3,
 };
 
@@ -25,6 +25,7 @@ typedef NS_ENUM(NSInteger, RecommendType) {
 @property (assign, nonatomic) BOOL isSpecial;
 @property (assign, nonatomic) RecommendType type;
 @property (strong, nonatomic) NSString *title;
+@property (strong, nonatomic) NSString *catagory;
 @property (assign, nonatomic) NSInteger position;
 @property (assign, nonatomic) NSInteger createTime;
 @property (strong, nonatomic) ArticleBean *article;

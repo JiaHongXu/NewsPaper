@@ -132,7 +132,6 @@
 - (void)refresh {
     WS(ws);
     [[JHNetworkManager defaultManager] requestJson:[NSString stringWithFormat:@"%@%@", SERVER_URL, self.api] success:^(NSString *msg, id obj) {
-        NSLog(@"%@", obj);
         [self.recommendArray removeAllObjects];
         [self.recommendArray addObjectsFromArray:[RecommendBean recommendArrayFromDic:obj]];
         

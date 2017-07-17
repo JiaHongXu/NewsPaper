@@ -9,15 +9,19 @@
 #import <Foundation/Foundation.h>
 
 typedef NS_ENUM(NSInteger, NPCellType) {
+    NPCellTypeNone = 0,
     NPCellTypeRecommendHeader,
     NPCellTypeRecommendMultiPic,
+    NPCellTypeRecommendLargePic,
     NPCellTypeRecommendDetail,
+    NPCellTypeRecommendDetailNoPic,
     NPCellTypeNormalHeader,
     NPCellTypeNormalMultiPic,
     NPCellTypeNormalDetail,
+    NPCellTypeNormalDetailNoPic,
 };
 
-typedef void(^NPConfigCellBlock)(NSIndexPath *indexPath, UITableViewCell *cell);
+typedef void(^NPConfigCellBlock)(UITableViewCell *cell);
 
 @interface NPCellFactory : NSObject
 

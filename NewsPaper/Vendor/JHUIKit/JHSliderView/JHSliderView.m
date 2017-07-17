@@ -106,11 +106,22 @@
 
 - (void)layoutSubviews {
     [super layoutSubviews];
-    CGFloat height = CGRectGetHeight(self.frame), width = CGRectGetWidth(self.frame);
-    self.imgView.frame = CGRectMake(0, 0, width, height);
-    self.bottomView.frame = CGRectMake(0, 0.7*height, width, 0.3*height);
-    self.titleLabel.frame =  self.bottomView.bounds;
-    self.titleLabel.preferredMaxLayoutWidth = width*0.8;
+    [self.imgView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(self.contentView);
+    }];
+    [self.bottomView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.height.mas_equalTo(self.contentView.mas_height).multipliedBy(0.3);
+        make.width.equalTo(self.contentView.mas_width);
+        make.bottom.equalTo(self.contentView.mas_bottom);
+        make.centerX.equalTo(self.contentView);
+    }];
+    [self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.width.equalTo(self.bottomView.mas_width).multipliedBy(0.9);
+        make.bottom.equalTo(self.bottomView.mas_bottom).with.offset(-16);
+        make.top.equalTo(self.bottomView.mas_top).with.offset(8);
+        make.centerX.equalTo(self.bottomView);
+    }];
+    self.titleLabel.preferredMaxLayoutWidth = CGRectGetWidth(self.contentView.bounds)*0.9;
 }
 
 #pragma mark - Getter
@@ -140,7 +151,7 @@
         _titleLabel = [[UILabel alloc] init];
         _titleLabel.numberOfLines = 0;
         _titleLabel.textColor = [UIColor whiteColor];
-        _titleLabel.textAlignment = NSTextAlignmentCenter;
+        _titleLabel.textAlignment = NSTextAlignmentLeft;
         _titleLabel.font = [UIFont preferredFontForTextStyle:UIFontTextStyleHeadline];
         
         [self.bottomView addSubview:_titleLabel];

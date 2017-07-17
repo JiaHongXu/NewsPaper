@@ -11,9 +11,12 @@
 #import "RecommendBean.h"
 #import "ArticleBean.h"
 #import "UIViewController+JHExtension.h"
-#import "RecommendHeaderCell.h"
 
-#define kTableViewCellIdentifier @[@"sliderCellId", @"test", @"test", @"test", @"test", @"test"]
+#import "NPCellFactory.h"
+#import "NPNewsRecommendHeaderCell.h"
+#import "NPNewsRecommendBodyCell.h"
+#import "NPNewsNormalHeaderCell.h"
+#import "NPNewsNormalBodyCell.h"
 
 @interface NewsFragmentController () <UIScrollViewDelegate>
 @property (strong, nonatomic) NewsSourceModel *newsSource;
@@ -44,6 +47,8 @@
 - (void)configView {
     self.clearsSelectionOnViewWillAppear = YES;
     [self.tableView setContentInset:UIEdgeInsetsMake(64, 0, 0, 0)];
+    [self.tableView setSeparatorInset:UIEdgeInsetsMake(0, 8, 0, 8)];
+    self.tableView.estimatedRowHeight = 130;
     
     self.refreshControl = [[UIRefreshControl alloc] init];
     self.refreshControl.tintColor = [JHThemeManager sharedThemeManager].accent;
@@ -58,8 +63,6 @@
     [super viewDidLoad];
     [self configView];
     [self.newsSource refresh];
-    [self.tableView registerClass:[RecommendHeaderCell class] forCellReuseIdentifier:kTableViewCellIdentifier[0]];
-    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:kTableViewCellIdentifier[1]];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -72,7 +75,7 @@
     if (indexPath.row == 0) {
         return CGRectGetWidth(self.view.frame)*10./16.;
     } else {
-        return 100;
+        return UITableViewAutomaticDimension;
     }
 }
 
@@ -88,38 +91,46 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = nil;
+    
     if (self.newsSource.type == NewsSourceTypeRecommand) {
         RecommendBean *recommend = [((RecommandSourceModel *)_newsSource) sourceAtIndex:indexPath.row];
-        [tableView dequeueReusableCellWithIdentifier:kTableViewCellIdentifier[recommend.type]];
-        if (!cell) {
-            switch (recommend.type) {
-                case RecommendTypeSlider:
-                    cell = [[RecommendHeaderCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:kTableViewCellIdentifier[recommend.type]];
-                    break;
-                    
-                default:
-                    cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:kTableViewCellIdentifier[recommend.type]];
-                    break;
-            }
-        }
         switch (recommend.type) {
             case RecommendTypeSlider:
-                ((RecommendHeaderCell *)cell).recommend = recommend;
+            {
+                cell = [NPCellFactory configCellForTableView:tableView type:NPCellTypeRecommendHeader indexPath:indexPath config:^(UITableViewCell *cell) {
+                    ((NPNewsRecommendHeaderCell *)cell).recommend = recommend;
+                }];
+            }
                 break;
-                
+            case RecommendTypeLargePicture:
+            {
+                cell = [NPCellFactory configCellForTableView:tableView type:NPCellTypeRecommendLargePic indexPath:indexPath config:^(UITableViewCell *cell) {
+                    ((NPNewsRecommendLargePicBodyCell *)cell).recommend = recommend;
+                }];
+            }
+                break;
+            case RecommendTypeDetail:
+            {
+                cell = [NPCellFactory configCellForTableView:tableView type:NPCellTypeRecommendDetail indexPath:indexPath config:^(UITableViewCell *cell) {
+                    ((NPNewsRecommendDetailBodyCell *)cell).recommend = recommend;
+                }];
+            }
+                break;
+            case RecommendTypeMultiPicture:
+            {
+                cell = [NPCellFactory configCellForTableView:tableView type:NPCellTypeRecommendMultiPic indexPath:indexPath config:^(UITableViewCell *cell) {
+                    ((NPNewsRecommendMultiPicBodyCell *)cell).recommend = recommend;
+                }];
+            }
             default:
-                
+            {
+                cell = [NPCellFactory configCellForTableView:tableView type:NPCellTypeNone indexPath:indexPath config:^(UITableViewCell *cell) {
+                    
+                }];
+            }
                 break;
         }
-    } else {
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kTableViewCellIdentifier[1] forIndexPath:indexPath];
-        if (!cell) {
-            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:kTableViewCellIdentifier[1]];
-        }
-        
-        cell.backgroundColor = [UIColor redColor];
     }
-    
     return cell;
 }
 

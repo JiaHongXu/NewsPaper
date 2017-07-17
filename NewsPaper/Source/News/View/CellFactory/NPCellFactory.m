@@ -14,6 +14,7 @@ static NSMutableDictionary *cellTypeMappingDic;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         cellTypeMappingDic = [[NSMutableDictionary alloc] initWithCapacity:0];
+        [cellTypeMappingDic setObject:[UITableViewCell class] forKey:@(NPCellTypeNone)];
     });
     [cellTypeMappingDic setObject:clazz forKey:@(type)];
 }
@@ -24,12 +25,14 @@ static NSMutableDictionary *cellTypeMappingDic;
     if (!cell) {
         Class cellClass = [cellTypeMappingDic objectForKey:@(type)];
         if (!cellClass) {
-            NSAssert(NO, [NSString stringWithFormat:@"class haven't registered"]);
+            NSAssert(NO, [NSString stringWithFormat:@"UITableViewCell haven't registered"]);
         } else {
             cell = [[cellClass alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
         }
     }
-    block(indexPath, cell);
+    if (block) {
+        block(cell);
+    }
     return cell;
 }
 

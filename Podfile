@@ -9,4 +9,6 @@ pod 'SDWebImage', '~>3.8'
 pod 'FMDB'
 pod 'Masonry'
 
+pod 'JPFPSStatus', '~> 0.1'
+
 end

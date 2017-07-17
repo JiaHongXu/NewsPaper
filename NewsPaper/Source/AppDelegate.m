@@ -12,7 +12,10 @@
 
 // register cells
 #import "NPCellFactory.h"
-#import "RecommendHeaderCell.h"
+#import "NPNewsRecommendHeaderCell.h"
+#import "NPNewsRecommendBodyCell.h"
+
+#import "JPFPSStatus.h"
 
 @interface AppDelegate ()
 @property (strong, nonatomic) ZeusViewController *zeusVC;
@@ -39,10 +42,24 @@
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     [self startupAnimation];
+    
+#if defined(DEBUG)||defined(_DEBUG)
+    [[JPFPSStatus sharedInstance] open];
+#endif
+    
+#if defined(DEBUG)||defined(_DEBUG)
+    [[JPFPSStatus sharedInstance] openWithHandler:^(NSInteger fpsValue) {
+        NSLog(@"fpsvalue %@",@(fpsValue));
+    }];
+#endif
 }
 
 - (void)initCells {
-    [NPCellFactory registerCellClass:[RecommendHeaderCell class] forType:NPCellTypeRecommendHeader];
+    [NPCellFactory registerCellClass:[NPNewsRecommendHeaderCell class] forType:NPCellTypeRecommendHeader];
+    [NPCellFactory registerCellClass:[NPNewsRecommendDetailBodyCell class] forType:NPCellTypeRecommendDetail];
+    [NPCellFactory registerCellClass:[NPNewsRecommendDetailNoPicBodyCell class] forType:NPCellTypeRecommendDetailNoPic];
+    [NPCellFactory registerCellClass:[NPNewsRecommendLargePicBodyCell class] forType:NPCellTypeRecommendLargePic];
+    [NPCellFactory registerCellClass:[NPNewsRecommendMultiPicBodyCell class] forType:NPCellTypeRecommendMultiPic];
 }
 
 - (void)initNetwork {

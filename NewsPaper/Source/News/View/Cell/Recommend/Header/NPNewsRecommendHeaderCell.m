@@ -6,18 +6,18 @@
 //  Copyright © 2017年 Jiahong Xu. All rights reserved.
 //
 
-#import "RecommendHeaderCell.h"
+#import "NPNewsRecommendHeaderCell.h"
 
 #import "JHSliderView.h"
 #import "RecommendBean.h"
 #import "ArticleBean.h"
 #import "PictureBean.h"
 
-@interface RecommendHeaderCell ()
+@interface NPNewsRecommendHeaderCell ()
 @property (strong, nonatomic) JHSliderView *sliderView;
 @end
 
-@implementation RecommendHeaderCell
+@implementation NPNewsRecommendHeaderCell
 
 #pragma mark - Init Methods
 
@@ -31,7 +31,6 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    // Initialization code
 }
 
 #pragma mark - Override Methods
@@ -43,8 +42,6 @@
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
 }
 
 #pragma mark - Setter

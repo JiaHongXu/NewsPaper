@@ -10,6 +10,6 @@
 
 @class RecommendBean;
 
-@interface RecommendHeaderCell : UITableViewCell
+@interface NPNewsRecommendHeaderCell : UITableViewCell
 @property (strong, nonatomic) RecommendBean *recommend;
 @end
