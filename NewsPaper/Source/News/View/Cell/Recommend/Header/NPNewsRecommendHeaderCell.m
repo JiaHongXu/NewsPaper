@@ -23,7 +23,7 @@
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
-        [self setNeedsLayout];
+        [self initConstraints];
     }
     
     return self;
@@ -33,12 +33,17 @@
     [super awakeFromNib];
 }
 
-#pragma mark - Override Methods
-
-- (void)layoutSubviews {
-    [super layoutSubviews];
-    self.sliderView.frame = self.frame;
+- (void)initConstraints {
+    [self.sliderView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.contentView.mas_left);
+        make.right.equalTo(self.contentView.mas_right);
+        make.top.equalTo(self.contentView.mas_top);
+        make.bottom.equalTo(self.contentView.mas_bottom);
+        make.height.equalTo(self.sliderView.mas_width).multipliedBy(10./16.).priorityHigh();
+    }];
 }
+
+#pragma mark - Override Methods
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];

@@ -47,11 +47,11 @@
     [[JPFPSStatus sharedInstance] open];
 #endif
     
-#if defined(DEBUG)||defined(_DEBUG)
-    [[JPFPSStatus sharedInstance] openWithHandler:^(NSInteger fpsValue) {
-        NSLog(@"fpsvalue %@",@(fpsValue));
-    }];
-#endif
+//#if defined(DEBUG)||defined(_DEBUG)
+//    [[JPFPSStatus sharedInstance] openWithHandler:^(NSInteger fpsValue) {
+//        NSLog(@"fpsvalue %@",@(fpsValue));
+//    }];
+//#endif
 }
 
 - (void)initCells {

@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "NPNewsBaseBodyCell.h"
 @class RecommendBean;
 
-@interface NPNewsRecommendBodyCell : UITableViewCell
+@interface NPNewsRecommendBodyCell : NPNewsBaseBodyCell
 @property (strong, nonatomic) RecommendBean *recommend;
 @end
 

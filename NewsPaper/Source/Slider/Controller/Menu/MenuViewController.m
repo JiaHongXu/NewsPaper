@@ -16,12 +16,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [JHTool colorWithHexStr:NPColorBlackLightBackgroud];
+    self.view.backgroundColor = [JHThemeManager sharedThemeManager].accent;
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 @end

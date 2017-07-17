@@ -72,11 +72,7 @@
 #pragma mark - UITableViewDelegate
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.row == 0) {
-        return CGRectGetWidth(self.view.frame)*10./16.;
-    } else {
-        return UITableViewAutomaticDimension;
-    }
+    return UITableViewAutomaticDimension;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {

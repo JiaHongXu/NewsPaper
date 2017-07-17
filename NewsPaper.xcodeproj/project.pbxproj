@@ -17,6 +17,7 @@
 		5C8AB72B1F1D087200897772 /* NPNewsNormalHeaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C8AB7221F1D087200897772 /* NPNewsNormalHeaderCell.m */; };
 		5C8AB72C1F1D087200897772 /* NPNewsRecommendBodyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C8AB7261F1D087200897772 /* NPNewsRecommendBodyCell.m */; };
 		5C8AB72D1F1D087200897772 /* NPNewsRecommendHeaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C8AB7291F1D087200897772 /* NPNewsRecommendHeaderCell.m */; };
+		5C8AB7361F1D254F00897772 /* NPNewsBaseBodyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C8AB7351F1D254F00897772 /* NPNewsBaseBodyCell.m */; };
 		5C98B3381F1105750059F7BD /* JHNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C98B3311F1105750059F7BD /* JHNetworkManager.m */; };
 		5C98B3391F1105750059F7BD /* JHThemeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C98B3341F1105750059F7BD /* JHThemeManager.m */; };
 		5C98B33A1F1105750059F7BD /* JHBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C98B3371F1105750059F7BD /* JHBaseModel.m */; };
@@ -85,6 +86,8 @@
 		5C8AB7261F1D087200897772 /* NPNewsRecommendBodyCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPNewsRecommendBodyCell.m; sourceTree = "<group>"; };
 		5C8AB7281F1D087200897772 /* NPNewsRecommendHeaderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPNewsRecommendHeaderCell.h; sourceTree = "<group>"; };
 		5C8AB7291F1D087200897772 /* NPNewsRecommendHeaderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPNewsRecommendHeaderCell.m; sourceTree = "<group>"; };
+		5C8AB7341F1D254F00897772 /* NPNewsBaseBodyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPNewsBaseBodyCell.h; sourceTree = "<group>"; };
+		5C8AB7351F1D254F00897772 /* NPNewsBaseBodyCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPNewsBaseBodyCell.m; sourceTree = "<group>"; };
 		5C98B3301F1105750059F7BD /* JHNetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHNetworkManager.h; sourceTree = "<group>"; };
 		5C98B3311F1105750059F7BD /* JHNetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHNetworkManager.m; sourceTree = "<group>"; };
 		5C98B3331F1105750059F7BD /* JHThemeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHThemeManager.h; sourceTree = "<group>"; };
@@ -265,6 +268,7 @@
 		5C855D221F1621B5002F85AA /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				5C8AB72E1F1D248900897772 /* Base */,
 				5C8AB71C1F1D087200897772 /* Normal */,
 				5C8AB7231F1D087200897772 /* Recommend */,
 			);
@@ -321,6 +325,31 @@
 			children = (
 				5C8AB7281F1D087200897772 /* NPNewsRecommendHeaderCell.h */,
 				5C8AB7291F1D087200897772 /* NPNewsRecommendHeaderCell.m */,
+			);
+			path = Header;
+			sourceTree = "<group>";
+		};
+		5C8AB72E1F1D248900897772 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				5C8AB7321F1D253400897772 /* Body */,
+				5C8AB7331F1D253400897772 /* Header */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		5C8AB7321F1D253400897772 /* Body */ = {
+			isa = PBXGroup;
+			children = (
+				5C8AB7341F1D254F00897772 /* NPNewsBaseBodyCell.h */,
+				5C8AB7351F1D254F00897772 /* NPNewsBaseBodyCell.m */,
+			);
+			path = Body;
+			sourceTree = "<group>";
+		};
+		5C8AB7331F1D253400897772 /* Header */ = {
+			isa = PBXGroup;
+			children = (
 			);
 			path = Header;
 			sourceTree = "<group>";
@@ -915,6 +944,7 @@
 				5C294CDD1F12069300B03721 /* ArticleBean.m in Sources */,
 				5CA9CF191F18EB94006CB2E2 /* NPCellFactory.m in Sources */,
 				5CDA601B1F0E67F700A16F79 /* AppDelegate.m in Sources */,
+				5C8AB7361F1D254F00897772 /* NPNewsBaseBodyCell.m in Sources */,
 				5C8AB72A1F1D087200897772 /* NPNewsNormalBodyCell.m in Sources */,
 				5CA9E7FD1F0EA10400F28645 /* NewsPagerViewController.m in Sources */,
 				5CDA60231F0E67F700A16F79 /* MeNavigationController.m in Sources */,

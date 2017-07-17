@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "NPNewsBaseBodyCell.h"
 @class ArticleBean;
 
-@interface NPNewsNormalBodyCell : UITableViewCell
+@interface NPNewsNormalBodyCell : NPNewsBaseBodyCell
 @property (strong, nonatomic) ArticleBean *article;
 @end
 
