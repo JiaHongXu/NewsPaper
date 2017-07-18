@@ -19,7 +19,7 @@
 - (void)setRecommend:(RecommendBean *)recommend {
     _recommend = recommend;
     self.titleLabel.text = _recommend.title;
-    self.timeLabel.text = [NSString stringWithFormat:@"%ld", _recommend.createTime];
+    self.timeLabel.text = _recommend.timeStr;
     self.catagoryLabel.text = _recommend.catagory;
     self.catagoryLabel.text = @"World";
     [self.imgView sd_setImageWithURL:[NSURL URLWithString:_recommend.article.pictures[0].file] placeholderImage:[UIImage imageNamed:@"placeholder_default"]];

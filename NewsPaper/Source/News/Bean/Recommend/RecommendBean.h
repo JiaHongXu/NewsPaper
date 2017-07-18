@@ -13,10 +13,11 @@
 @class ArticleBean;
 
 typedef NS_ENUM(NSInteger, RecommendType) {
-    RecommendTypeSlider = 0,
-    RecommendTypeDetail = 1,
-    RecommendTypeLargePicture = 2,
-    RecommendTypeMultiPicture = 3,
+    RecommendTypeNone = -1,
+    RecommendTypeHeader,
+    RecommendTypeDetail,
+    RecommendTypeLargePicture,
+    RecommendTypeMultiPicture,
 };
 
 @interface RecommendBean : NSObject
@@ -29,6 +30,7 @@ typedef NS_ENUM(NSInteger, RecommendType) {
 @property (assign, nonatomic) NSInteger position;
 @property (assign, nonatomic) NSInteger createTime;
 @property (strong, nonatomic) ArticleBean *article;
+@property (strong, nonatomic) NSString *timeStr;
 
 @property (strong, nonatomic) RecommendBean *nextRecommend;
 + (NSArray<RecommendBean *> *)recommendArrayFromDic:(NSDictionary *)dic;

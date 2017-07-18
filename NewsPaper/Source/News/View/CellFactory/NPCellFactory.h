@@ -15,10 +15,13 @@ typedef NS_ENUM(NSInteger, NPCellType) {
     NPCellTypeRecommendLargePic,
     NPCellTypeRecommendDetail,
     NPCellTypeRecommendDetailNoPic,
-    NPCellTypeNormalHeader,
-    NPCellTypeNormalMultiPic,
-    NPCellTypeNormalDetail,
-    NPCellTypeNormalDetailNoPic,
+    
+    NPCellTypeArticleHeader,
+    NPCellTypeArticleMultiPic,
+    NPCellTypeArticleLargePic,
+    NPCellTypeArticleDetail,
+    NPCellTypeArticleDetailNoPic,
+    NPCellTypeArticleMedia,
 };
 
 typedef void(^NPConfigCellBlock)(UITableViewCell *cell);

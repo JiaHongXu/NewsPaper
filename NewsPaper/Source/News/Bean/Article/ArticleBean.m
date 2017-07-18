@@ -79,4 +79,18 @@
     
     return self;
 }
+
+#pragma mark - Getter
+
+- (NSString *)timeStr {
+    if (!_timeStr) {
+        NSDateFormatter *dateFormater = [[NSDateFormatter alloc] init];
+        dateFormater.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US"];
+        [dateFormater setDateFormat:@"MMMM d.yyyy"];
+        _timeStr = [dateFormater stringFromDate:[NSDate dateWithTimeIntervalSince1970:_publishTime]];
+    }
+    
+    return _timeStr;
+}
+
 @end

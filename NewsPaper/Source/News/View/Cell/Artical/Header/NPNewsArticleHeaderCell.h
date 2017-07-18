@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 @class ArticleBean;
 
-@interface NPNewsNormalHeaderCell : UITableViewCell
+@interface NPNewsArticleHeaderCell : UITableViewCell
 @property (strong, nonatomic) ArticleBean *article;
 @end

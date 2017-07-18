@@ -6,19 +6,19 @@
 //  Copyright © 2017年 Jiahong Xu. All rights reserved.
 //
 
-#import "NPNewsNormalHeaderCell.h"
+#import "NPNewsArticleHeaderCell.h"
 
 #import "ArticleBean.h"
 #import "PictureBean.h"
 
-@interface NPNewsNormalHeaderCell ()
+@interface NPNewsArticleHeaderCell ()
 @property (strong, nonatomic) UIImageView *imgView;
 @property (strong, nonatomic) UILabel *titleLabel;
 @property (strong, nonatomic) UILabel *catagoryLabel;
 @property (strong, nonatomic) UILabel *timeLabel;
 @end
 
-@implementation NPNewsNormalHeaderCell
+@implementation NPNewsArticleHeaderCell
 
 #pragma mark - Init Methods
 

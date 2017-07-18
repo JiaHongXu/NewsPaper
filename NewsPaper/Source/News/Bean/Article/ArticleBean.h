@@ -10,11 +10,13 @@
 @class PictureBean;
 @class MediaBean;
 
-typedef NS_ENUM(NSInteger, ArticleContentMode) {
-    ArticleContentModeDefault = 0,      // title only or pic with title or large pic
-    ArticleContentModeLargePicture = 1, // able to be large pic or pic with title
-    ArticleContentModeNNNNN,
-    ArticleContentModeTitlePicture = 6,
+typedef NS_ENUM(NSInteger, ArticleType) {
+    ArticleTypeNone = 0,
+    ArticleTypeHeader,
+    ArticleTypeDetail,
+    ArticleTypeLargePicture,
+    ArticleTypeMultiPicture,
+    ArticleTypeMultiMedia,
 };
 
 @interface ArticleBean : NSObject
@@ -26,7 +28,7 @@ typedef NS_ENUM(NSInteger, ArticleContentMode) {
 @property (assign, nonatomic) NSInteger columnId;
 @property (strong, nonatomic) NSString *content;
 @property (strong, nonatomic) NSString *contentB;
-@property (assign, nonatomic) ArticleContentMode contentMode;
+@property (assign, nonatomic) NSInteger contentMode;
 @property (strong, nonatomic) NSString *desc;
 @property (strong, nonatomic) NSString *descB;
 @property (strong, nonatomic) NSString *feature;
@@ -52,9 +54,12 @@ typedef NS_ENUM(NSInteger, ArticleContentMode) {
 @property (assign, nonatomic) NSInteger thumbnails;
 @property (strong, nonatomic) NSString *title;
 @property (strong, nonatomic) NSString *titleB;
+@property (assign, nonatomic) ArticleType type;
 @property (assign, nonatomic) NSInteger updateTime;
+@property (strong, nonatomic) NSString *timeStr;
 
 + (NSArray<ArticleBean *> *)articleArrayFromDic:(NSDictionary *)dic;
 
 - (instancetype)initWithDic:(NSDictionary *)dic;
+
 @end

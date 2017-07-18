@@ -15,8 +15,8 @@
 #import "NPCellFactory.h"
 #import "NPNewsRecommendHeaderCell.h"
 #import "NPNewsRecommendBodyCell.h"
-#import "NPNewsNormalHeaderCell.h"
-#import "NPNewsNormalBodyCell.h"
+#import "NPNewsArticleHeaderCell.h"
+#import "NPNewsArticleBodyCell.h"
 
 @interface NewsFragmentController () <UIScrollViewDelegate>
 @property (strong, nonatomic) NewsSourceModel *newsSource;
@@ -48,6 +48,7 @@
     self.clearsSelectionOnViewWillAppear = YES;
     [self.tableView setContentInset:UIEdgeInsetsMake(64, 0, 0, 0)];
     [self.tableView setSeparatorInset:UIEdgeInsetsMake(0, 8, 0, 8)];
+    self.tableView.showsVerticalScrollIndicator = NO;
     self.tableView.estimatedRowHeight = 130;
     
     self.refreshControl = [[UIRefreshControl alloc] init];
@@ -91,7 +92,7 @@
     if (self.newsSource.type == NewsSourceTypeRecommand) {
         RecommendBean *recommend = [((RecommandSourceModel *)_newsSource) sourceAtIndex:indexPath.row];
         switch (recommend.type) {
-            case RecommendTypeSlider:
+            case RecommendTypeHeader:
             {
                 cell = [NPCellFactory configCellForTableView:tableView type:NPCellTypeRecommendHeader indexPath:indexPath config:^(UITableViewCell *cell) {
                     ((NPNewsRecommendHeaderCell *)cell).recommend = recommend;
@@ -116,6 +117,44 @@
             {
                 cell = [NPCellFactory configCellForTableView:tableView type:NPCellTypeRecommendMultiPic indexPath:indexPath config:^(UITableViewCell *cell) {
                     ((NPNewsRecommendMultiPicBodyCell *)cell).recommend = recommend;
+                }];
+            }
+            default:
+            {
+                cell = [NPCellFactory configCellForTableView:tableView type:NPCellTypeNone indexPath:indexPath config:^(UITableViewCell *cell) {
+                    
+                }];
+            }
+                break;
+        }
+    } else {
+        ArticleBean *article = [_newsSource sourceAtIndex:indexPath.row];
+        switch (article.type) {
+            case ArticleTypeHeader:
+            {
+                cell = [NPCellFactory configCellForTableView:tableView type:NPCellTypeRecommendHeader indexPath:indexPath config:^(UITableViewCell *cell) {
+                    ((NPNewsArticleHeaderCell *)cell).article = article;
+                }];
+            }
+                break;
+            case ArticleTypeLargePicture:
+            {
+                cell = [NPCellFactory configCellForTableView:tableView type:NPCellTypeRecommendLargePic indexPath:indexPath config:^(UITableViewCell *cell) {
+                    ((NPNewsArticleLargePicBodyCell *)cell).article = article;
+                }];
+            }
+                break;
+            case ArticleTypeDetail:
+            {
+                cell = [NPCellFactory configCellForTableView:tableView type:NPCellTypeRecommendDetail indexPath:indexPath config:^(UITableViewCell *cell) {
+                    ((NPNewsArticleDetailBodyCell *)cell).article = article;
+                }];
+            }
+                break;
+            case ArticleTypeMultiPicture:
+            {
+                cell = [NPCellFactory configCellForTableView:tableView type:NPCellTypeRecommendMultiPic indexPath:indexPath config:^(UITableViewCell *cell) {
+                    ((NPNewsArticleMultiPicBodyCell *)cell).article = article;
                 }];
             }
             default:
