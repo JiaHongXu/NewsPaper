@@ -29,3 +29,7 @@ Using Charles to sniffer packets
 Likely to rewrite in Texture, for a better performance, also replace AFN to my own network tools.
 
 A little bite of ReactiveCocoa, maybe?
+
+## Screen Shot
+
+![Home Page](ScreenShotHomepage.png)
