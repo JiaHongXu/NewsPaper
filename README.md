@@ -32,4 +32,4 @@ A little bite of ReactiveCocoa, maybe?
 
 ## Screen Shot
 
-![Home Page](ScreenShotHomepage.png)
+![Home Page](ScreenShotHomePage.png)
