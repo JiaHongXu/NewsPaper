@@ -132,31 +132,25 @@
         switch (article.type) {
             case ArticleTypeHeader:
             {
-                cell = [NPCellFactory configCellForTableView:tableView type:NPCellTypeRecommendHeader indexPath:indexPath config:^(UITableViewCell *cell) {
+                cell = [NPCellFactory configCellForTableView:tableView type:NPCellTypeArticleHeader indexPath:indexPath config:^(UITableViewCell *cell) {
                     ((NPNewsArticleHeaderCell *)cell).article = article;
                 }];
             }
                 break;
             case ArticleTypeLargePicture:
             {
-                cell = [NPCellFactory configCellForTableView:tableView type:NPCellTypeRecommendLargePic indexPath:indexPath config:^(UITableViewCell *cell) {
+                cell = [NPCellFactory configCellForTableView:tableView type:NPCellTypeArticleLargePic indexPath:indexPath config:^(UITableViewCell *cell) {
                     ((NPNewsArticleLargePicBodyCell *)cell).article = article;
                 }];
             }
                 break;
             case ArticleTypeDetail:
             {
-                cell = [NPCellFactory configCellForTableView:tableView type:NPCellTypeRecommendDetail indexPath:indexPath config:^(UITableViewCell *cell) {
+                cell = [NPCellFactory configCellForTableView:tableView type:NPCellTypeArticleDetail indexPath:indexPath config:^(UITableViewCell *cell) {
                     ((NPNewsArticleDetailBodyCell *)cell).article = article;
                 }];
             }
                 break;
-            case ArticleTypeMultiPicture:
-            {
-                cell = [NPCellFactory configCellForTableView:tableView type:NPCellTypeRecommendMultiPic indexPath:indexPath config:^(UITableViewCell *cell) {
-                    ((NPNewsArticleMultiPicBodyCell *)cell).article = article;
-                }];
-            }
             default:
             {
                 cell = [NPCellFactory configCellForTableView:tableView type:NPCellTypeNone indexPath:indexPath config:^(UITableViewCell *cell) {

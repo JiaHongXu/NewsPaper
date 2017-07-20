@@ -15,8 +15,9 @@ typedef NS_ENUM(NSInteger, ArticleType) {
     ArticleTypeHeader,
     ArticleTypeDetail,
     ArticleTypeLargePicture,
-    ArticleTypeMultiPicture,
-    ArticleTypeMultiMedia,
+    ArticleTypeNoPicture,
+    ArticleTypeAudio,
+    ArticleTypeVideo,
 };
 
 @interface ArticleBean : NSObject
@@ -61,5 +62,4 @@ typedef NS_ENUM(NSInteger, ArticleType) {
 + (NSArray<ArticleBean *> *)articleArrayFromDic:(NSDictionary *)dic;
 
 - (instancetype)initWithDic:(NSDictionary *)dic;
-
 @end

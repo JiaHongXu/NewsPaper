@@ -22,7 +22,9 @@
     self.timeLabel.text = _recommend.timeStr;
     self.catagoryLabel.text = _recommend.catagory;
     self.catagoryLabel.text = @"World";
-    [self.imgView sd_setImageWithURL:[NSURL URLWithString:_recommend.article.pictures[0].file] placeholderImage:[UIImage imageNamed:@"placeholder_default"]];
+    if (_recommend.article.pictures.count>0) {
+        [self.imgView sd_setImageWithURL:[NSURL URLWithString:_recommend.article.pictures[0].file] placeholderImage:[UIImage imageNamed:@"placeholder_default"]];
+    }
 }
 
 @end

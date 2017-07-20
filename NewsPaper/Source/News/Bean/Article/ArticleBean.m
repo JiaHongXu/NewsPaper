@@ -25,16 +25,36 @@
         [array addObject:[[ArticleBean alloc] initWithDic:articlesDic[articleId]]];
     }
     [array sortUsingComparator:^NSComparisonResult(ArticleBean *bean1, ArticleBean *bean2) {
-        if (bean1.position < bean2.position) {
+        if (bean1.updateTime > bean2.updateTime) {
             return NSOrderedAscending;
-        } else if (bean1.position > bean2.position){
+        } else if (bean1.updateTime < bean2.updateTime){
             return NSOrderedDescending;
         } else {
             return NSOrderedSame;
         }
     }];
     
+    [self figureType:array];
+    
     return [array copy];
+}
+
++ (void)figureType:(NSArray<ArticleBean *> *)array {
+    for (ArticleBean *article in array) {
+        if ([array indexOfObject:article]==0) {
+            article.type = ArticleTypeHeader;
+        } else if (article.medias.count!=0) {
+            if ([article.medias[0].file hasSuffix:@"mp3"]) {
+                article.type = ArticleTypeAudio;
+            } else if([article.medias[0].file hasSuffix:@"mp4"]) {
+                article.type = ArticleTypeVideo;
+            }
+        } else if (article.pictures.count==0) {
+            article.type = ArticleTypeNoPicture;
+        } else {
+            article.type = ArticleTypeDetail;
+        }
+    }
 }
 
 #pragma mark - Init Methods

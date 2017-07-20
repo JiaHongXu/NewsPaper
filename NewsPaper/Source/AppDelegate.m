@@ -14,6 +14,8 @@
 #import "NPCellFactory.h"
 #import "NPNewsRecommendHeaderCell.h"
 #import "NPNewsRecommendBodyCell.h"
+#import "NPNewsArticleHeaderCell.h"
+#import "NPNewsArticleBodyCell.h"
 
 #import "JPFPSStatus.h"
 
@@ -60,6 +62,9 @@
     [NPCellFactory registerCellClass:[NPNewsRecommendDetailNoPicBodyCell class] forType:NPCellTypeRecommendDetailNoPic];
     [NPCellFactory registerCellClass:[NPNewsRecommendLargePicBodyCell class] forType:NPCellTypeRecommendLargePic];
     [NPCellFactory registerCellClass:[NPNewsRecommendMultiPicBodyCell class] forType:NPCellTypeRecommendMultiPic];
+    [NPCellFactory registerCellClass:[NPNewsArticleHeaderCell class] forType:NPCellTypeArticleHeader];
+    [NPCellFactory registerCellClass:[NPNewsArticleDetailBodyCell class] forType:NPCellTypeArticleDetail];
+    [NPCellFactory registerCellClass:[NPNewsArticleDetailNoPicBodyCell class] forType:NPCellTypeArticleDetailNoPic];
 }
 
 - (void)initNetwork {
