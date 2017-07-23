@@ -17,11 +17,6 @@
 #define SCREEN_WIDTH (([UIScreen mainScreen].bounds.size.width < [UIScreen mainScreen].bounds.size.height)?[UIScreen mainScreen].bounds.size.width:[UIScreen mainScreen].bounds.size.height)
 #define SCREEN_HEIGHT (([UIScreen mainScreen].bounds.size.width > [UIScreen mainScreen].bounds.size.height)?[UIScreen mainScreen].bounds.size.width:[UIScreen mainScreen].bounds.size.height)
 
-#pragma mark - Color
-#define NPColorPrimary @"#FBEC77"
-#define NPColorBlackLightBackgroud @"#292929"
-#define NPColorBlackDarkBackgroud @"#232323"
-
 #pragma mark - Dimens
 
 

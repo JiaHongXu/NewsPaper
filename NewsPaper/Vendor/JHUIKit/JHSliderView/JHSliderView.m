@@ -96,6 +96,7 @@
 - (instancetype)initWithPlaceholder:(UIImage *)placeholder {
     if (self = [self init]) {
         _placeholder = placeholder;
+        self.backgroundColor = [UIColor clearColor];
         [self setNeedsLayout];
     }
     
@@ -165,7 +166,14 @@
 - (void)setSliderBean:(JHSliderViewBean *)sliderBean {
     _sliderBean = sliderBean;
     self.titleLabel.text = _sliderBean.title;
-    _sliderBean.imgUrl ? [self.imgView sd_setImageWithURL:[NSURL URLWithString:_sliderBean.imgUrl] placeholderImage:_placeholder] : [self.imgView setImage:_sliderBean.imgFile];
+    _sliderBean.imgUrl ? [self.imgView sd_setImageWithURL:[NSURL URLWithString:_sliderBean.imgUrl] placeholderImage:[UIImage imageNamed:@"placeholder_default"] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+        if (cacheType == SDImageCacheTypeNone) {
+            self.imgView.alpha = 0;
+            [UIView animateWithDuration:0.3 animations:^{
+                self.imgView.alpha = 1;
+            }];
+        }
+    }] : [self.imgView setImage:_sliderBean.imgFile];
 }
 
 @end
@@ -363,6 +371,7 @@
         _collectionView.pagingEnabled = YES;
         _collectionView.showsHorizontalScrollIndicator = NO;
         _collectionView.bounces = NO;
+        _collectionView.backgroundColor = [UIColor clearColor];
         
         [self addSubview:_collectionView];
     }

@@ -20,7 +20,14 @@
     self.titleLabel.text = _article.title;
     self.timeLabel.text = _article.timeStr;
     if (_article.pictures.count!=0) {
-        [self.imgView sd_setImageWithURL:[NSURL URLWithString:_article.pictures[0].file] placeholderImage:[UIImage imageNamed:@"placeholder_default"]];
+        [self.imgView sd_setImageWithURL:[NSURL URLWithString:_article.pictures[0].file] placeholderImage:[UIImage imageNamed:@"placeholder_default"] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+            if (cacheType == SDImageCacheTypeNone) {
+                self.imgView.alpha = 0;
+                [UIView animateWithDuration:0.3 animations:^{
+                    self.imgView.alpha = 1;
+                }];
+            }
+        }];
     }
 }
 
