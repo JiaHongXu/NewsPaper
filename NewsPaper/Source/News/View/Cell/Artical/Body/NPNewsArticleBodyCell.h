@@ -29,3 +29,11 @@
 @interface NPNewsArticleMultiPicBodyCell : NPNewsArticleBodyCell
 
 @end
+
+@interface NPNewsArticleDetailVideo : NPNewsArticleBodyCell
+
+@end
+
+@interface NPNewsArticleDetailAudio : NPNewsArticleBodyCell
+
+@end

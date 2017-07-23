@@ -21,7 +21,6 @@
     self.titleLabel.text = _recommend.title;
     self.timeLabel.text = _recommend.timeStr;
     self.catagoryLabel.text = _recommend.catagory;
-    self.catagoryLabel.text = @"World";
     if (_recommend.article.pictures.count>0) {
         [self.imgView sd_setImageWithURL:[NSURL URLWithString:_recommend.article.pictures[0].file] placeholderImage:[UIImage imageNamed:@"placeholder_default"]];
     }
@@ -85,7 +84,7 @@
         make.left.equalTo(self.contentView.mas_left).with.offset(insets.left);
         make.right.equalTo(self.contentView.mas_right).with.offset(-insets.right);
         make.top.equalTo(self.titleLabel.mas_bottom).with.offset(spacing);
-        make.height.equalTo(self.imgView.mas_width).multipliedBy(3./4.);
+        make.height.equalTo(self.imgView.mas_width).multipliedBy(10./16.);
     }];
     [self.timeLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.imgView.mas_bottom).with.offset(insets.bottom);
@@ -117,7 +116,7 @@
         make.left.equalTo(self.contentView.mas_left).with.offset(insets.left);
         make.right.equalTo(self.contentView.mas_right).with.offset(-insets.right);
         make.top.equalTo(self.titleLabel.mas_bottom).with.offset(spacing);
-        make.height.equalTo(self.imgView.mas_width).multipliedBy(3./4.);
+        make.height.equalTo(self.imgView.mas_width).multipliedBy(10./16.);
     }];
     [self.timeLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.imgView.mas_bottom).with.offset(insets.bottom);

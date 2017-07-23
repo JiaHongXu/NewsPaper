@@ -26,7 +26,7 @@ typedef NS_ENUM(NSInteger, RecommendType) {
 @property (assign, nonatomic) BOOL isSpecial;
 @property (assign, nonatomic) RecommendType type;
 @property (strong, nonatomic) NSString *title;
-@property (strong, nonatomic) NSString *catagory;
+@property (assign, nonatomic) NSString *catagory;
 @property (assign, nonatomic) NSInteger position;
 @property (assign, nonatomic) NSInteger createTime;
 @property (strong, nonatomic) ArticleBean *article;

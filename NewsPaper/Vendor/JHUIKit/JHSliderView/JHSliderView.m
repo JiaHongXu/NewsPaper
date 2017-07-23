@@ -323,6 +323,8 @@
     _isWebImgs = YES;
     _sliderBeans = [JHSliderViewBean sliderBeansWithTitles:titles imgUrls:imgUrls];
     [self.collectionView reloadData];
+    
+    self.pageControl.hidden = titles.count<=1;
 }
 
 - (void)setTitles:(NSArray<NSString *> *)titles imgFiles:(NSArray<UIImage *> *)imgFiles {
@@ -332,6 +334,8 @@
     _isWebImgs = NO;
     _sliderBeans = [JHSliderViewBean sliderBeansWithTitles:titles imgFiles:imgFiles];
     [self.collectionView reloadData];
+    
+    self.pageControl.hidden = titles.count<=1;
 }
 
 #pragma mark - Getter

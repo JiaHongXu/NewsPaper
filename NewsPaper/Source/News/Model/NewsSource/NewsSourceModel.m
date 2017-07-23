@@ -28,7 +28,7 @@
 + (NSArray<NewsSourceModel *> *)newsSourceModels {
     NSMutableArray *array = [[NSMutableArray alloc] initWithCapacity:0];
     [array addObject:[[RecommandSourceModel alloc] initWithNewsSourceType:NewsSourceTypeRecommand]];
-    for (NSInteger index = 1; index < 14; index++) {
+    for (NSInteger index = 1; index < 12; index++) {
         [array addObject:[[NewsSourceModel alloc] initWithNewsSourceType:index]];
     }
     
@@ -91,12 +91,11 @@
                    @"World",
                    @"Bussiness",
                    @"Sport",
-                   @"LifeStyle",
+                   @"Life Style",
                    @"Tech",
-                   @"Special",
+                   //@"Special",
                    @"Photo",
-                   @"Video",
-                   @"Newspaper"][_type];
+                   @"Video"][_type];
     }
     
     return _title;
@@ -107,6 +106,16 @@
         _api = @{@"Recommand":NPApiNewsRecommand,
                  @"Editor's Pick":@"/newsdata/news/columns/440_column_v4.json",
                  @"Audio":@"/newsdata/news/columns/audios.json",
+                 @"Opinion":@"/newsdata/news/columns/33_column_v4.json",
+                 @"China":@"/newsdata/news/columns/32_column_v4.json",
+                 @"World":@"/newsdata/news/columns/42_column_v4.json",
+                 @"Bussiness":@"/newsdata/news/columns/40_column_v4.json",
+                 @"Sport":@"/newsdata/news/columns/47_column_v4.json",
+                 @"Life Style":@"/newsdata/news/columns/34_column_v4.json",
+                 @"Tech":@"/newsdata/news/columns/360_column_v4.json",
+                 //@"Special":@"",
+                 @"Photo":@"/newsdata/news/columns/38_column_v4.json",
+                 @"Video":@"/newsdata/news/columns/39_column_v4.json",
                  }[self.title];
     }
     

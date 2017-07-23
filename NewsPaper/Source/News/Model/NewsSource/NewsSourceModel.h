@@ -26,7 +26,6 @@ typedef NS_ENUM(NSInteger, NewsSourceType) {
     NewsSourceTypeSpecial,
     NewsSourceTypePhoto,
     NewsSourceTypeVideo,
-    NewsSourceTypeNewspaper,
 };
 
 @interface NewsSourceModel : JHBaseModel

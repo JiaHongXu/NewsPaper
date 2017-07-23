@@ -39,11 +39,17 @@
     return [array copy];
 }
 
-+ (void)figureType:(NSArray<ArticleBean *> *)array {
++ (void)figureType:(NSMutableArray<ArticleBean *> *)array {
+    ArticleBean *firstPicArticle = nil;
+    
     for (ArticleBean *article in array) {
-        if ([array indexOfObject:article]==0) {
-            article.type = ArticleTypeHeader;
-        } else if (article.medias.count!=0) {
+        
+        // save the first article that contains pictures
+        if (!firstPicArticle && article.pictures.count!=0) {
+            firstPicArticle = article;
+        }
+        
+        if (article.medias.count!=0) {
             if ([article.medias[0].file hasSuffix:@"mp3"]) {
                 article.type = ArticleTypeAudio;
             } else if([article.medias[0].file hasSuffix:@"mp4"]) {
@@ -53,6 +59,15 @@
             article.type = ArticleTypeNoPicture;
         } else {
             article.type = ArticleTypeDetail;
+        }
+    }
+    
+    // make the first article a pic one
+    if (firstPicArticle) {
+        firstPicArticle.type = ArticleTypeHeader;
+        if ([array indexOfObject:firstPicArticle]!=0) {
+            [array removeObject:firstPicArticle];
+            [array insertObject:firstPicArticle atIndex:0];
         }
     }
 }

@@ -65,6 +65,16 @@
         JHJsonModelPropertyMappingNSInteger(dic, @"position", _position)
         JHJsonModelPropertyMappingNSInteger(dic, @"createTime", _createTime)
         _article = [[ArticleBean alloc] initWithDic:dic[@"article"]];
+        _catagory = @{
+                      @(42):@"WORLD",
+                      @(40):@"BUSINESS",
+                      @(38):@"PHOTO",
+                      @(32):@"CHINA",
+                      @(47):@"SPORTS",
+                      @(39):@"VIDEO",
+                      @(34):@"LIFE STYLE",
+                      @(33):@"OPINION",
+                      }[@(_article.columnId)];
     }
     
     return self;

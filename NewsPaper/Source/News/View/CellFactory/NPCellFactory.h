@@ -21,7 +21,8 @@ typedef NS_ENUM(NSInteger, NPCellType) {
     NPCellTypeArticleLargePic,
     NPCellTypeArticleDetail,
     NPCellTypeArticleDetailNoPic,
-    NPCellTypeArticleMedia,
+    NPCellTypeArticleVideo,
+    NPCellTypeArticleAudio,
 };
 
 typedef void(^NPConfigCellBlock)(UITableViewCell *cell);

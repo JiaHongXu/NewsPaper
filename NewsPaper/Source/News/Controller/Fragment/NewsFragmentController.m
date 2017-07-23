@@ -119,6 +119,7 @@
                     ((NPNewsRecommendMultiPicBodyCell *)cell).recommend = recommend;
                 }];
             }
+                break;
             default:
             {
                 cell = [NPCellFactory configCellForTableView:tableView type:NPCellTypeNone indexPath:indexPath config:^(UITableViewCell *cell) {
@@ -129,35 +130,65 @@
         }
     } else {
         ArticleBean *article = [_newsSource sourceAtIndex:indexPath.row];
-        switch (article.type) {
-            case ArticleTypeHeader:
-            {
-                cell = [NPCellFactory configCellForTableView:tableView type:NPCellTypeArticleHeader indexPath:indexPath config:^(UITableViewCell *cell) {
-                    ((NPNewsArticleHeaderCell *)cell).article = article;
-                }];
+        if (_newsSource.type == NewsSourceTypeVideo) {
+            cell = [NPCellFactory configCellForTableView:tableView type:NPCellTypeArticleVideo indexPath:indexPath config:^(UITableViewCell *cell) {
+                ((NPNewsArticleDetailVideo *)cell).article = article;
+            }];
+        } else if (_newsSource.type == NewsSourceTypeAudio) {
+            cell = [NPCellFactory configCellForTableView:tableView type:NPCellTypeArticleAudio indexPath:indexPath config:^(UITableViewCell *cell) {
+                ((NPNewsArticleDetailAudio *)cell).article = article;
+            }];
+        } else {
+            switch (article.type) {
+                case ArticleTypeHeader:
+                {
+                    cell = [NPCellFactory configCellForTableView:tableView type:NPCellTypeArticleHeader indexPath:indexPath config:^(UITableViewCell *cell) {
+                        ((NPNewsArticleHeaderCell *)cell).article = article;
+                    }];
+                }
+                    break;
+                case ArticleTypeLargePicture:
+                {
+                    cell = [NPCellFactory configCellForTableView:tableView type:NPCellTypeArticleLargePic indexPath:indexPath config:^(UITableViewCell *cell) {
+                        ((NPNewsArticleLargePicBodyCell *)cell).article = article;
+                    }];
+                }
+                    break;
+                case ArticleTypeDetail:
+                {
+                    cell = [NPCellFactory configCellForTableView:tableView type:NPCellTypeArticleDetail indexPath:indexPath config:^(UITableViewCell *cell) {
+                        ((NPNewsArticleDetailBodyCell *)cell).article = article;
+                    }];
+                }
+                    break;
+                case ArticleTypeNoPicture:
+                {
+                    cell = [NPCellFactory configCellForTableView:tableView type:NPCellTypeArticleDetailNoPic indexPath:indexPath config:^(UITableViewCell *cell) {
+                        ((NPNewsArticleDetailBodyCell *)cell).article = article;
+                    }];
+                }
+                    break;
+                case ArticleTypeVideo:
+                {
+                    if (_newsSource.type != NewsSourceTypeVideo) {
+                        cell = [NPCellFactory configCellForTableView:tableView type:NPCellTypeArticleDetail indexPath:indexPath config:^(UITableViewCell *cell) {
+                            ((NPNewsArticleDetailBodyCell *)cell).article = article;
+                        }];
+                    } else {
+                        cell = [NPCellFactory configCellForTableView:tableView type:NPCellTypeArticleVideo indexPath:indexPath config:^(UITableViewCell *cell) {
+                            ((NPNewsArticleDetailBodyCell *)cell).article = article;
+                        }];
+                    }
+                }
+                    break;
+                default:
+                {
+                    cell = [NPCellFactory configCellForTableView:tableView type:NPCellTypeNone indexPath:indexPath config:^(UITableViewCell *cell) {
+                        
+                    }];
+                }
+                    break;
             }
-                break;
-            case ArticleTypeLargePicture:
-            {
-                cell = [NPCellFactory configCellForTableView:tableView type:NPCellTypeArticleLargePic indexPath:indexPath config:^(UITableViewCell *cell) {
-                    ((NPNewsArticleLargePicBodyCell *)cell).article = article;
-                }];
-            }
-                break;
-            case ArticleTypeDetail:
-            {
-                cell = [NPCellFactory configCellForTableView:tableView type:NPCellTypeArticleDetail indexPath:indexPath config:^(UITableViewCell *cell) {
-                    ((NPNewsArticleDetailBodyCell *)cell).article = article;
-                }];
-            }
-                break;
-            default:
-            {
-                cell = [NPCellFactory configCellForTableView:tableView type:NPCellTypeNone indexPath:indexPath config:^(UITableViewCell *cell) {
-                    
-                }];
-            }
-                break;
         }
     }
     return cell;

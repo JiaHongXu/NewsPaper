@@ -67,8 +67,8 @@
     if (!_catagoryLabel) {
         _catagoryLabel = [[UILabel alloc] init];
         _catagoryLabel.font = [UIFont preferredFontForTextStyle:UIFontTextStyleFootnote];
-        _catagoryLabel.textColor = [JHThemeManager sharedThemeManager].textSecondary;
-        _catagoryLabel.textAlignment = NSTextAlignmentRight;
+        _catagoryLabel.textColor = [JHThemeManager sharedThemeManager].accent;
+        _catagoryLabel.textAlignment = NSTextAlignmentLeft;
         [self.contentView addSubview:_catagoryLabel];
     }
     
@@ -80,7 +80,7 @@
         _timeLabel = [[UILabel alloc] init];
         _timeLabel.font = [UIFont preferredFontForTextStyle:UIFontTextStyleFootnote];
         _timeLabel.textColor = [JHThemeManager sharedThemeManager].textSecondary;
-        _timeLabel.textAlignment = NSTextAlignmentRight;
+        _timeLabel.textAlignment = NSTextAlignmentLeft;
         [self.contentView addSubview:_timeLabel];
     }
     

@@ -65,6 +65,8 @@
     [NPCellFactory registerCellClass:[NPNewsArticleHeaderCell class] forType:NPCellTypeArticleHeader];
     [NPCellFactory registerCellClass:[NPNewsArticleDetailBodyCell class] forType:NPCellTypeArticleDetail];
     [NPCellFactory registerCellClass:[NPNewsArticleDetailNoPicBodyCell class] forType:NPCellTypeArticleDetailNoPic];
+    [NPCellFactory registerCellClass:[NPNewsArticleDetailVideo class] forType:NPCellTypeArticleVideo];
+    [NPCellFactory registerCellClass:[NPNewsArticleDetailAudio class] forType:NPCellTypeArticleAudio];
 }
 
 - (void)initNetwork {
