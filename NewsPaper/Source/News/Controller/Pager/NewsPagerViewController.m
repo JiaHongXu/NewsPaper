@@ -100,6 +100,7 @@
 - (void)configView {
     [self.navigationItem setLeftBarButtonItem:self.leftMenuBarButton];
     [self setViewControllers:@[[self.pagerModel newsFragmentControllerAtIndex:0]] direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:nil];
+    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:nil action:nil];
 }
 
 #pragma mark - Life Circle

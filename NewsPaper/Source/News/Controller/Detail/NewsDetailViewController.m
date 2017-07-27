@@ -20,9 +20,11 @@
 #pragma mark - Init Methods
 
 - (instancetype)initWithArticle:(ArticleBean *)article {
-    if (self = [super init]) {
+    if (self = [super initWithURL:[NSURL URLWithString:article.shareUrl] entersReaderIfAvailable:YES]) {
+        self.preferredControlTintColor = [JHThemeManager sharedThemeManager].accent;
         _article = article;
-        self.title = @"Article";
+        self.title = article.title;
+        NSLog(@"%@", article.shareUrl);
     }
     
     return self;

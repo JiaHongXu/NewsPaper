@@ -7,11 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import <SafariServices/SafariServices.h>
 
 @class ArticleBean;
 @class RecommendBean;
 
-@interface NewsDetailViewController : UIViewController
+@interface NewsDetailViewController : SFSafariViewController
 
 - (instancetype)initWithArticle:(ArticleBean *)article;
 - (instancetype)initWithRecommend:(RecommendBean *)recommend;

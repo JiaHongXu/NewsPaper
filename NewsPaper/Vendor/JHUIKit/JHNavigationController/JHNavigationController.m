@@ -18,10 +18,9 @@
 + (void)initialize {
     UINavigationBar *navigationBar = [UINavigationBar appearance];
     [navigationBar setTintColor:[JHThemeManager sharedThemeManager].accent];
-//    [navigationBar setBarTintColor:[JHThemeManager sharedThemeManager].navigationBar];
     [navigationBar setTitleTextAttributes:@{
                                             NSForegroundColorAttributeName:[JHThemeManager sharedThemeManager].navigationBarText,
-                                            NSFontAttributeName:[UIFont preferredFontForTextStyle:UIFontTextStyleTitle2],
+                                            NSFontAttributeName:[UIFont preferredFontForTextStyle:UIFontTextStyleTitle3],
                                             }];
 }
 
