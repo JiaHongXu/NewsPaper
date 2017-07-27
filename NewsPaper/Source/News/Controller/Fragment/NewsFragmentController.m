@@ -7,6 +7,8 @@
 //
 
 #import "NewsFragmentController.h"
+#import "NewsDetailViewController.h"
+
 #import "NewsSourceModel.h"
 #import "RecommendBean.h"
 #import "ArticleBean.h"
@@ -78,6 +80,19 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    NewsDetailViewController *detailVC = nil;
+    if (self.newsSource.type == NewsSourceTypeRecommand) {
+        detailVC = [[NewsDetailViewController alloc] initWithRecommend:[((RecommandSourceModel *)_newsSource) sourceAtIndex:indexPath.row]];
+    } else {
+        detailVC = [[NewsDetailViewController alloc] initWithArticle:[_newsSource sourceAtIndex:indexPath.row]];
+    }
+    
+    if (detailVC) {
+        [self.navigationController pushViewController:detailVC animated:YES];
+    }
 }
 
 #pragma mark - UITableViewDataSource

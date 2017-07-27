@@ -6,8 +6,8 @@
 //  Copyright © 2017年 Jiahong Xu. All rights reserved.
 //
 
-#import "JHViewController.h"
+#import <UIKit/UIKit.h>
 
-@interface MeMainViewController : JHViewController
+@interface MeMainViewController : UIViewController
 
 @end

@@ -41,7 +41,11 @@
 #pragma mark - UITableViewDelegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [[NSNotificationCenter defaultCenter] postNotificationName:NPNotificationMenuShouldOpenClose object:nil];
     
+    if (indexPath.section==0) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:NPNotificationNewsFragmentShouldChange object:@(indexPath.row)];
+    }
 }
 
 #pragma mark - UITableViewDataSource

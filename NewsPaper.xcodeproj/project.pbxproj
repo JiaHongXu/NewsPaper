@@ -11,6 +11,7 @@
 		5C294CDD1F12069300B03721 /* ArticleBean.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C294CDC1F12069300B03721 /* ArticleBean.m */; };
 		5C294CE11F1219F700B03721 /* MediaBean.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C294CE01F1219F700B03721 /* MediaBean.m */; };
 		5C4085471F0FBD6A00614E7F /* NewsFragmentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C4085461F0FBD6A00614E7F /* NewsFragmentController.m */; };
+		5C6F64951F2A351000112535 /* NewsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C6F64941F2A351000112535 /* NewsDetailViewController.m */; };
 		5C855D1C1F150565002F85AA /* JHSliderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C855D1B1F150565002F85AA /* JHSliderView.m */; };
 		5C855D211F15104D002F85AA /* RecommendBean.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C855D201F15104D002F85AA /* RecommendBean.m */; };
 		5C8AB72C1F1D087200897772 /* NPNewsRecommendBodyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C8AB7261F1D087200897772 /* NPNewsRecommendBodyCell.m */; };
@@ -43,7 +44,6 @@
 		5CDA60231F0E67F700A16F79 /* MeNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CDA5FFA1F0E67F700A16F79 /* MeNavigationController.m */; };
 		5CDA60281F0E67F700A16F79 /* JHTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CDA600D1F0E67F700A16F79 /* JHTool.m */; };
 		5CDA60291F0E67F700A16F79 /* JHNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CDA60111F0E67F700A16F79 /* JHNavigationController.m */; };
-		5CDA602A1F0E67F700A16F79 /* JHViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CDA60141F0E67F700A16F79 /* JHViewController.m */; };
 		AA3D909C4D7A25E2A5426B51 /* Pods_NewsPaper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44F8B5CC49AB8D56D98B3912 /* Pods_NewsPaper.framework */; };
 /* End PBXBuildFile section */
 
@@ -74,6 +74,8 @@
 		5C294CE01F1219F700B03721 /* MediaBean.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MediaBean.m; sourceTree = "<group>"; };
 		5C4085451F0FBD6A00614E7F /* NewsFragmentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsFragmentController.h; sourceTree = "<group>"; };
 		5C4085461F0FBD6A00614E7F /* NewsFragmentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsFragmentController.m; sourceTree = "<group>"; };
+		5C6F64931F2A351000112535 /* NewsDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsDetailViewController.h; sourceTree = "<group>"; };
+		5C6F64941F2A351000112535 /* NewsDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsDetailViewController.m; sourceTree = "<group>"; };
 		5C855D1A1F150565002F85AA /* JHSliderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHSliderView.h; sourceTree = "<group>"; };
 		5C855D1B1F150565002F85AA /* JHSliderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHSliderView.m; sourceTree = "<group>"; };
 		5C855D1F1F15104D002F85AA /* RecommendBean.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecommendBean.h; sourceTree = "<group>"; };
@@ -144,8 +146,6 @@
 		5CDA600D1F0E67F700A16F79 /* JHTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHTool.m; sourceTree = "<group>"; };
 		5CDA60101F0E67F700A16F79 /* JHNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHNavigationController.h; sourceTree = "<group>"; };
 		5CDA60111F0E67F700A16F79 /* JHNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHNavigationController.m; sourceTree = "<group>"; };
-		5CDA60131F0E67F700A16F79 /* JHViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHViewController.h; sourceTree = "<group>"; };
-		5CDA60141F0E67F700A16F79 /* JHViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHViewController.m; sourceTree = "<group>"; };
 		A6891F859237CA2E90A98760 /* Pods-NewsPaper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewsPaper.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NewsPaper/Pods-NewsPaper.debug.xcconfig"; sourceTree = "<group>"; };
 		B48944161646EAC0C16537C4 /* Pods-NewsPaper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewsPaper.release.xcconfig"; path = "Pods/Target Support Files/Pods-NewsPaper/Pods-NewsPaper.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -229,6 +229,15 @@
 				5C4085461F0FBD6A00614E7F /* NewsFragmentController.m */,
 			);
 			path = Fragment;
+			sourceTree = "<group>";
+		};
+		5C6F64921F2A350400112535 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				5C6F64931F2A351000112535 /* NewsDetailViewController.h */,
+				5C6F64941F2A351000112535 /* NewsDetailViewController.m */,
+			);
+			path = Detail;
 			sourceTree = "<group>";
 		};
 		5C71FB3A1F1BBFBA00111B25 /* ThirdParty */ = {
@@ -464,6 +473,7 @@
 		5CA9E7F91F0E9EFE00F28645 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				5C6F64921F2A350400112535 /* Detail */,
 				5C4085441F0FBD4F00614E7F /* Fragment */,
 				5CB389A41F0F391700E219BB /* Navigation */,
 				5CA9E7FA1F0E9F2300F28645 /* Pager */,
@@ -716,7 +726,6 @@
 			children = (
 				5C855D191F150565002F85AA /* JHSliderView */,
 				5CDA600F1F0E67F700A16F79 /* JHNavigationController */,
-				5CDA60121F0E67F700A16F79 /* JHViewController */,
 			);
 			path = JHUIKit;
 			sourceTree = "<group>";
@@ -728,15 +737,6 @@
 				5CDA60111F0E67F700A16F79 /* JHNavigationController.m */,
 			);
 			path = JHNavigationController;
-			sourceTree = "<group>";
-		};
-		5CDA60121F0E67F700A16F79 /* JHViewController */ = {
-			isa = PBXGroup;
-			children = (
-				5CDA60131F0E67F700A16F79 /* JHViewController.h */,
-				5CDA60141F0E67F700A16F79 /* JHViewController.m */,
-			);
-			path = JHViewController;
 			sourceTree = "<group>";
 		};
 		FA88682E6C392241BB638357 /* Pods */ = {
@@ -947,6 +947,7 @@
 				5C8AB7361F1D254F00897772 /* NPNewsBaseBodyCell.m in Sources */,
 				5CA9E7FD1F0EA10400F28645 /* NewsPagerViewController.m in Sources */,
 				5CDA60231F0E67F700A16F79 /* MeNavigationController.m in Sources */,
+				5C6F64951F2A351000112535 /* NewsDetailViewController.m in Sources */,
 				5C8AB73F1F1D2DD800897772 /* NPNewsArticleHeaderCell.m in Sources */,
 				5C98B33E1F11064A0059F7BD /* NSDictionary+JHExtension.m in Sources */,
 				5CDA60291F0E67F700A16F79 /* JHNavigationController.m in Sources */,
@@ -955,7 +956,6 @@
 				5C98B3381F1105750059F7BD /* JHNetworkManager.m in Sources */,
 				5CB389A31F0F251100E219BB /* MenuViewController.m in Sources */,
 				5CDA601F1F0E67F700A16F79 /* MeMainViewController.m in Sources */,
-				5CDA602A1F0E67F700A16F79 /* JHViewController.m in Sources */,
 				5C98B3431F1108AF0059F7BD /* UIViewController+JHExtension.m in Sources */,
 				5C294CD11F114F0100B03721 /* PictureBean.m in Sources */,
 				5C98B3391F1105750059F7BD /* JHThemeManager.m in Sources */,

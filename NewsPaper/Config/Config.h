@@ -30,6 +30,7 @@
 #define NPNotificationNetworkChange @"NPNotificationNetworkChange"
 #define NPNotificationMenuShouldOpenClose @"NPNotificationMenuShouldOpenClose"
 #define NPNotificationNewsFragmentDidChange @"NPNotificationNewsFragmentDidChange"
+#define NPNotificationNewsFragmentShouldChange @"NPNotificationNewsFragmentShouldChange"
 
 
 #endif /* Config_h */

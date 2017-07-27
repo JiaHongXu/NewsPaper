@@ -124,6 +124,7 @@
 - (void)registerNotificationListener {
     NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
     [center addObserver:self selector:@selector(newsFragmentDidChange:) name:NPNotificationNewsFragmentDidChange object:nil];
+    [center addObserver:self selector:@selector(newsFragmentShouldChange:) name:NPNotificationNewsFragmentShouldChange object:nil];
 }
 
 - (void)unregisterNotificationListener {
@@ -139,6 +140,12 @@
 
 - (void)newsFragmentDidChange:(NSNotification *)notification {
     self.title = (NSString *)notification.object;
+}
+
+
+- (void)newsFragmentShouldChange:(NSNotification *)notification {
+    NSInteger index = [notification.object integerValue];
+    [self setViewControllers:@[[self.pagerModel newsFragmentControllerAtIndex:index]] direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:nil];
 }
 
 #pragma mark - Getter
